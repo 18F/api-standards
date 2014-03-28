@@ -56,11 +56,11 @@ These guidelines aim to support a truly RESTful API. Here are a few exceptions:
 * All articles in (or belonging to) this magazine:
     * GET http://www.example.gov/api/v1/magazines/1234/articles.json
 * All articles in this magazine in XML format:
-    * GET http://example.gov/api/v1/magazines/1234/articles.xml
+    * GET http://www.example.gov/api/v1/magazines/1234/articles.xml
 * Specify optional fields in a comma separated list:
     * GET http://www.example.gov/api/v1/magazines/1234.json?fields=title,subtitle,date
 * Add a new article to a particular magazine:
-    * POST http://example.gov/api/v1/magazines/1234/articles
+    * POST http://www.example.gov/api/v1/magazines/1234/articles
 
 ### Bad URL examples
 * Non-plural noun:
