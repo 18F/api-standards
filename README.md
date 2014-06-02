@@ -17,7 +17,7 @@ An "endpoint" is a combination of two things:
 * The verb (e.g. `GET` or `POST`)
 * The URL path (e.g. `/posts`)
 
-And you can pass information to an endpoint in either of two ways:
+Information can be passed to an endpoint in either of two ways:
 
 * The URL query string (e.g. `?year=2014`)
 * HTTP headers (e.g. `X-Api-Key: my-key`)
@@ -70,14 +70,14 @@ Use three simple, common response codes indicating (1) success, (2) failure due 
 * 500 - Internal Server Error
 
 
-## Versions
+## Versioning
 
 [TBD pending discussion in [#5](https://github.com/18F/api-standards/issues/5)].
 
 
 ## Pagination
 
-If pagination is required to navigate datasets, use the method that makes the most sense for your data.
+If pagination is required to navigate datasets, use the method that makes the most sense for the API's data.
 
 Common patterns:
 
@@ -100,106 +100,12 @@ Example of how that might be implemented:
 }
 ```
 
-## Request & Response Examples
-
-### API Resources
-
-  - [GET /magazines](#get-magazines)
-  - [GET /magazines/[id]](#get-magazinesid)
-  - [POST /magazines/[id]/articles](#post-magazinesidarticles)
-
-### GET /magazines
-
-Example: http://example.gov/api/v1/magazines.json
-
-Response body:
-
-    {
-        "metadata": {
-            "resultset": {
-                "count": 123,
-                "offset": 0,
-                "limit": 10
-            }
-        },
-        "results": [
-            {
-                "id": "1234",
-                "type": "magazine",
-                "title": "Public Water Systems",
-                "tags": [
-                    {"id": "125", "name": "Environment"},
-                    {"id": "834", "name": "Water Quality"}
-                ],
-                "created": "1231621302"
-            },
-            {
-                "id": 2351,
-                "type": "magazine",
-                "title": "Public Schools",
-                "tags": [
-                    {"id": "125", "name": "Elementary"},
-                    {"id": "834", "name": "Charter Schools"}
-                ],
-                "created": "126251302"
-            }
-            {
-                "id": 2351,
-                "type": "magazine",
-                "title": "Public Schools",
-                "tags": [
-                    {"id": "125", "name": "Pre-school"},
-                ],
-                "created": "126251302"
-            }
-        ]
-    }
-
-### GET /magazines/[id]
-
-Example: http://example.gov/api/v1/magazines/[id].json
-
-Response body:
-
-    {
-        "id": "1234",
-        "type": "magazine",
-        "title": "Public Water Systems",
-        "tags": [
-            {"id": "125", "name": "Environment"},
-            {"id": "834", "name": "Water Quality"}
-        ],
-        "created": "1231621302"
-    }
-
-
-
-### POST /magazines/[id]/articles
-
-Example: Create – POST  http://example.gov/api/v1/magazines/[id]/articles
-
-Request body:
-
-    [
-        {
-            "title": "Raising Revenue",
-            "author_first_name": "Jane",
-            "author_last_name": "Smith",
-            "author_email": "jane.smith@example.gov",
-            "year": "2012",
-            "month": "August",
-            "day": "18",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ante ut augue scelerisque ornare. Aliquam tempus rhoncus quam vel luctus. Sed scelerisque fermentum fringilla. Suspendisse tincidunt nisl a metus feugiat vitae vestibulum enim vulputate. Quisque vehicula dictum elit, vitae cursus libero auctor sed. Vestibulum fermentum elementum nunc. Proin aliquam erat in turpis vehicula sit amet tristique lorem blandit. Nam augue est, bibendum et ultrices non, interdum in est. Quisque gravida orci lobortis... "
-        }
-    ]
-
-
 ## Always use SSL/HTTPS
 
 Any new API should use and require encryption (SSL).
 
 * **Security**: The contents of the request are encrypted across the Internet.
-* **Authenticity**: A stronger guarantee that you're communicating with the real API.
+* **Authenticity**: A stronger guarantee that a client is communicating with the real API.
 * **Privacy**: Enhanced privacy for apps and users using the API. HTTP headers and query string parameters (among other things) will be encrypted.
 * **Compatibility**: Broader client-side compatibility. For CORS requests to the API to work on HTTPS websites -- to not be blocked as mixed content -- those requests must be over HTTPS.
 
@@ -208,6 +114,20 @@ SSL should be configured using modern best practices, including ciphers that syu
 For an existing API that runs over plain HTTP, the first step is to add SSL support, and update the documentation to declare it the default, use it in examples, etc.
 
 Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
+
+## Use UTF-8
+
+Just [use UTF-8](http://utf8everywhere.org/).
+
+Expect accented characters or "smart quotes" in API output, even if they're not expected.
+
+An API should tell clients to expect UTF-8 by including a charset notation in the `Content-Type` header for responses.
+
+An API that returns JSON should use:
+
+```
+Content-Type: application/json; charset=utf-8
+```
 
 ## CORS
 
