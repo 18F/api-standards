@@ -1,83 +1,44 @@
 # 18F API Standards
 
+This document captures 18F's view of API best practices and standards. We aim to incorporate as many of them as possible in our work.
+
+APIs, like other web applications, will vary greatly in implementation and design, depending on the situation and the goal the application is solving.
+
+This document is meant to provide a mix of:
+
+* High level design guidance, that individual APIs will interpret to meet their needs.
+* Low level web practices, that just about every modern HTTP API should use.
 
 
+### API Endpoints
 
-## Guidelines
+An "endpoint" is a combination of two things:
 
-This document provides guidelines and examples for 18F Web APIs, encouraging consistency, maintainability, and best practices across applications. 18F APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
+* The verb (e.g. `GET` or `POST`)
+* The URL path (e.g. `/posts`)
 
-This document borrows heavily from:
-* [Designing HTTP Interfaces and RESTful Web Services](http://munich2012.drupal.org/program/sessions/designing-http-interfaces-and-restful-web-services)
-* [API Facade Pattern](http://apigee.com/about/content/api-fa%C3%A7ade-pattern), by Brian Mulloy, Apigee
-* [Web API Design](http://pages.apigee.com/web-api-design-ebook.html), by Brian Mulloy, Apigee
-* [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+And you can pass information to an endpoint in either of two ways:
 
-## Pragmatic REST
+* The URL query string (e.g. `?year=2014`)
+* HTTP headers (e.g. `X-Api-Key: my-key`)
 
-These guidelines aim to support a truly RESTful API. Here are a few exceptions:
-* Put the version number of the API in the URL (see examples below). Don’t accept any requests that do not specify a version number.
-* Allow users to request formats like JSON or XML like this:
-    * http://example.gov/api/v1/magazines.json
-    * http://example.gov/api/v1/magazines.xml
+When people say "RESTful" nowadays, they really mean designing simple, intuitive endpoints that represent unique functions in the API.
 
-## RESTful URLs
+Generally speaking:
 
-### General guidelines for RESTful URLs
-* A URL identifies a resource.
-* URLs should include nouns, not verbs.
-* Use plural nouns only for consistency (no singular nouns).
-* Use HTTP verbs (GET, POST, PUT, DELETE) to operate on the collections and elements.
-* You shouldn’t need to go deeper than resource/identifier/resource.
-* Put the version number at the base of your URL, for example http://example.com/v1/path/to/resource.
-* URL v. header:
-    * If it changes the logic you write to handle the response, put it in the URL.
-    * If it doesn’t change the logic for each response, like OAuth info, put it in the header.
-* Specify optional fields in a comma separated list.
-* Formats should be in the form of api/v2/resource/{id}.json
+* **Avoid single-endpoint APIs.** Don't jam multiple operations into the same endpoint with the same HTTP verb.
+* **Prioritize simplicity.** It should be easy to guess what an endpoint does by looking at the URL and HTTP verb, without needing to see a query string.
+* Endpoint URLs should advertise resources, and **avoid verbs**.
 
-### Good URL examples
-* List of magazines:
-    * GET http://example.gov/api/v1/magazines.json
-* Filtering is a query:
-    * GET http://example.gov/api/v1/magazines.json?year=2011&sort=desc
-    * GET http://example.gov/api/v1/magazines.json?topic=economy&year=2011
-* A single magazine in JSON format:
-    * GET http://example.gov/api/v1/magazines/1234.json
-* All articles in (or belonging to) this magazine:
-    * GET http://example.gov/api/v1/magazines/1234/articles.json
-* All articles in this magazine in XML format:
-    * GET http://example.gov/api/v1/magazines/1234/articles.xml
-* Specify optional fields in a comma separated list:
-    * GET http://example.gov/api/v1/magazines/1234.json?fields=title,subtitle,date
-* Add a new article to a particular magazine:
-    * POST http://example.gov/api/v1/magazines/1234/articles
+Some examples of these principles in action:
 
-### Bad URL examples
-* Non-plural noun:
-    * http://example.gov/magazine
-    * http://example.gov/magazine/1234
-    * http://example.gov/publisher/magazine/1234
-* Verb in URL:
-    * http://example.gov/magazine/1234/create
-* Filter outside of query string
-    * http://example.gov/magazines/2011/desc
-
-## HTTP Verbs
-
-HTTP verbs, or methods, should be used in compliance with their definitions under the [HTTP/1.1](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) standard.
-The action taken on the representation will be contextual to the media type being worked on and its current state. Here's an example of how HTTP verbs map to create, read, update, delete operations in a particular context:
-
-| HTTP METHOD | POST            | GET       | PUT         | DELETE |
-| ----------- | --------------- | --------- | ----------- | ------ |
-| CRUD OP     | CREATE          | READ      | UPDATE      | DELETE |
-| /dogs       | Create new dogs | List dogs | Bulk update | Delete all dogs |
-| /dogs/1234  | Error           | Show Bo   | If exists, update Bo; If not, error | Delete Bo |
-
-(Example from Web API Design, by Brian Mulloy, Apigee.)
-
+* [OpenFDA example query](http://open.fda.gov/api/reference/#example-query)
+* [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
+* [FBOpen API documentation](http://docs.fbopen.apiary.io/)
 
 ## Responses
+
+When using
 
 * No values in keys
 * No internal-specific names (e.g. "node" and "taxonomy term")
