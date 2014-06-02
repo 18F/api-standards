@@ -247,13 +247,6 @@ Request body:
     ]
 
 
-## Mock Responses
-It is suggested that each resource accept a 'mock' parameter on the testing server. Passing this parameter should return a mock data response (bypassing the backend).
-
-Implementing this feature early in development ensures that the API will exhibit consistent behavior, supporting a test driven development methodology.
-
-Note: If the mock parameter is included in a request to the production environment, an error should be raised.
-
 ## Always use SSL/HTTPS
 
 Any new API should use and require encryption (SSL).
