@@ -86,11 +86,7 @@ Use three simple, common response codes indicating (1) success, (2) failure due 
 
 ## Versions
 
-* Never release an API without a version number.
-* Versions should be integers, not decimal numbers, prefixed with ‘v’. For example:
-    * Good: v1, v2, v3
-    * Bad: v-1.1, v1.2, 1.3
-* Maintain APIs at least one version back.
+[TBD pending discussion in [#5](https://github.com/18F/api-standards/issues/5)].
 
 
 ## Record limits
