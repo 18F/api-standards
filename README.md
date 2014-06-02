@@ -1,16 +1,7 @@
 # 18F API Standards
 
-* [Guidelines](#guidelines)
-* [Pragmatic REST](#pragmatic-rest)
-* [RESTful URLs](#restful-urls)
-* [HTTP Verbs](#http-verbs)
-* [Responses](#responses)
-* [Error handling](#error-handling)
-* [Versions](#versions)
-* [Record limits](#record-limits)
-* [Request & Response Examples](#request--response-examples)
-* [Mock Responses](#mock-responses)
-* [JSONP](#jsonp)
+
+
 
 ## Guidelines
 
@@ -264,32 +255,18 @@ Implementing this feature early in development ensures that the API will exhibit
 Note: If the mock parameter is included in a request to the production environment, an error should be raised.
 
 
-## JSONP
+## CORS
 
-JSONP is easiest explained with an example. Here's one from [StackOverflow](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=votes#tab-top):
+If you want clients to be able to use your API from inside web browsers, then you should [enable CORS](http://enable-cors.org/).
 
-> Say you're on domain abc.com, and you want to make a request to domain xyz.com. To do so, you need to cross domain boundaries, a no-no in most of browserland.
+For the simplest and most common use case, where you want the entire API accessible from inside the browser, it is as simple as including this HTTP header in all responses:
 
-> The one item that bypasses this limitation is `<script>` tags. When you use a script tag, the domain limitation is ignored, but under normal circumstances, you can't really DO anything with the results, the script just gets evaluated.
+```
+Access-Control-Allow-Origin: *
+```
 
-> Enter JSONP. When you make your request to a server that is JSONP enabled, you pass a special parameter that tells the server a little bit about your page. That way, the server is able to nicely wrap up its response in a way that your page can handle.
+It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients, like [jQuery](https://jquery.com/).
 
-> For example, say the server expects a parameter called "callback" to enable its JSONP capabilities. Then your request would look like:
+**What about JSONP?**
 
->         http://xyz.com/sample.aspx?callback=mycallback
-
-> Without JSONP, this might return some basic javascript object, like so:
-
->         { foo: 'bar' }
-
-> However, with JSONP, when the server receives the "callback" parameter, it wraps up the result a little differently, returning something like this:
-
->         mycallback({ foo: 'bar' });
-
-> As you can see, it will now invoke the method you specified. So, in your page, you define the callback function:
-
->         mycallback = function(data){
->             alert(data.foo);
->         };
-
-http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=votes#tab-top
+JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If you must support IE8 or IE9, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
