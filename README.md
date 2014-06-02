@@ -89,26 +89,30 @@ Use three simple, common response codes indicating (1) success, (2) failure due 
 [TBD pending discussion in [#5](https://github.com/18F/api-standards/issues/5)].
 
 
-## Record limits
+## Pagination
 
-* If no limit is specified, return results with a default limit.
-* To get records 51 through 75 do this:
-    * http://example.gov/magazines?limit=25&offset=50
-    * offset=50 means, ‘skip the first 50 records’
-    * limit=25 means, ‘return a maximum of 25 records’
+If pagination is required to navigate datasets, use the method that makes the most sense for your data.
 
-Information about record limits and total available count should also be included in the response. Example:
+Common patterns:
 
-    {
-        "metadata": {
-            "resultset": {
-                "count": 227,
-                "offset": 25,
-                "limit": 25
-            }
-        },
-        "results": []
-    }
+* `page` and `per_page`. Intuitive for many use cases. Links to "page 2" may not always contain the same data.
+* `offset` and `limit`. Less intuitive, but possibly useful if they produce stable permalinks to result sets, and if that's a priority.
+* `since` and `limit`. Get everything "since" some ID or timestamp. Useful when letting clients efficiently stay "in sync" with data is a priority. Generally requires resultset order to be very stable.
+
+In paginated responses, include enough metadata so that clients can calculate how many pages of data there are, and how and whether to fetch the next page.
+
+Example of how that might be implemented:
+
+```json
+{
+  "results": [ ... actual results ... ],
+  "pagination": {
+    "count": 2340,
+    "page": 4,
+    "per_page": 20
+  }
+}
+```
 
 ## Request & Response Examples
 
