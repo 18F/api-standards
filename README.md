@@ -36,33 +36,19 @@ Some examples of these principles in action:
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 * [FBOpen API documentation](http://docs.fbopen.apiary.io/)
 
-## Responses
+## Just use JSON
 
-When using
+[JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, extremely widely supported transport format, suitable for many web APIs.
 
-* No values in keys
-* No internal-specific names (e.g. "node" and "taxonomy term")
-* Metadata should only contain direct properties of the response set, not properties of the members of the response set
+Supporting JSON and only JSON is a practical default for APIs, and generally reduces complexity both for the API provider and consumer.
 
-### Good examples
+### JSON guidelines
 
-No values in keys:
+Generally speaking:
 
-    "tags": [
-      {"id": "125", "name": "Environment"},
-      {"id": "834", "name": "Water Quality"}
-    ],
-
-
-### Bad examples
-
-Values in keys:
-
-    "tags": [
-      {"125": "Environment"},
-      {"834": "Water Quality"}
-    ],
-
+* Responses should be **a JSON object** (not an array). Using an array to return results limits the ability to include metadata about results, and limits the API's ability to add additional top-level keys in the future.
+* **Don't use unpredictable keys**. Parsing a JSON response where keys are unpredictable (e.g. derived from data) is difficult, and adds friction for clients.
+* **Use `under_score` case for keys**. Different languages use different case conventions. JSON uses `under_score`, not `camelCase`.
 
 ## Error handling
 
