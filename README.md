@@ -254,12 +254,26 @@ Implementing this feature early in development ensures that the API will exhibit
 
 Note: If the mock parameter is included in a request to the production environment, an error should be raised.
 
+## Always use SSL/HTTPS
+
+Any new API should use and require encryption (SSL).
+
+* **Security**: The contents of the request are encrypted across the Internet.
+* **Authenticity**: A stronger guarantee that you're communicating with the real API.
+* **Privacy**: Enhanced privacy for apps and users using the API. HTTP headers and query string parameters (among other things) will be encrypted.
+* **Compatibility**: Broader client-side compatibility. For CORS requests to the API to work on HTTPS websites -- to not be blocked as mixed content -- those requests must be over HTTPS.
+
+SSL should be configured using modern best practices, including ciphers that syupport [forward secrecy](http://en.wikipedia.org/wiki/Forward_secrecy), and [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **This is not exhaustive**: use [SSL Labs](ssllabs.com/ssltest/analyze.html) to evaluate an API's SSL configuration.
+
+For an existing API that runs over plain HTTP, the first step is to add SSL support, and update the documentation to declare it the default, use it in examples, etc.
+
+Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
 
 ## CORS
 
-If you want clients to be able to use your API from inside web browsers, then you should [enable CORS](http://enable-cors.org/).
+For clients to be able to use your API from inside web browsers, the API must [enable CORS](http://enable-cors.org/).
 
-For the simplest and most common use case, where you want the entire API accessible from inside the browser, it is as simple as including this HTTP header in all responses:
+For the simplest and most common use case, where the entire API should be accessible from inside the browser, enablign CORS is as simple as including this HTTP header in all responses:
 
 ```
 Access-Control-Allow-Origin: *
