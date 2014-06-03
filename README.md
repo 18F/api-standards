@@ -98,11 +98,15 @@ HTTP responses with error details should use a `4XX` status code to indicate a c
 
 If pagination is required to navigate datasets, use the method that makes the most sense for the API's data.
 
+#### Parameters
+
 Common patterns:
 
 * `page` and `per_page`. Intuitive for many use cases. Links to "page 2" may not always contain the same data.
 * `offset` and `limit`. Less intuitive, but possibly useful if they produce stable permalinks to result sets, and if that's a priority.
 * `since` and `limit`. Get everything "since" some ID or timestamp. Useful when letting clients efficiently stay "in sync" with data is a priority. Generally requires resultset order to be very stable.
+
+#### Metadata
 
 In paginated responses, include enough metadata so that clients can calculate how many pages of data there are, and how and whether to fetch the next page.
 
