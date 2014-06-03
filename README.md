@@ -9,15 +9,15 @@ This document is meant to provide a mix of:
 * High level design guidance, that individual APIs will interpret to meet their needs.
 * Low level web practices, that just about every modern HTTP API should use.
 
-### Common use cases
+### Design for common use cases
 
 For APIs that syndicate data, consider several common client use cases:
 
-* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of your dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
+* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
 * **Staying up to date.** Especially for large datasets, clients may want to keep "in sync" with a dataset without having to re-download everything. If this is a use case for the API, prioritize this in the design.
 * **Driving expensive actions.** (AKA: the [IFTTT](https://ifttt.com) test.) Consider what would happen if someone wanted to fire off automatic text messages to thousands of people, or light up the side of a skyscraper, every time a new record appears. Will the API's records always be in a reliable, unchanging order? Do records tend to appear in clumps, or in a steady stream? Generally speaking, consider the "entropy" an API client would experience.
 
-### Using your own API
+### Using one's own API
 
 The #1 best way to understand and address the weaknesses in an API's design and implementation is to use it in a production system.
 
@@ -139,7 +139,7 @@ Content-Type: application/json; charset=utf-8
 
 ### CORS
 
-For clients to be able to use your API from inside web browsers, the API must [enable CORS](http://enable-cors.org).
+For clients to be able to use an API from inside web browsers, the API must [enable CORS](http://enable-cors.org).
 
 For the simplest and most common use case, where the entire API should be accessible from inside the browser, enablign CORS is as simple as including this HTTP header in all responses:
 
@@ -151,4 +151,4 @@ It's supported by [every modern browser](http://enable-cors.org/client.html), an
 
 **What about JSONP?**
 
-JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If you must support IE8 or IE9, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
+JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or UE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
