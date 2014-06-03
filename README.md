@@ -156,13 +156,15 @@ Content-Type: application/json; charset=utf-8
 
 For clients to be able to use an API from inside web browsers, the API must [enable CORS](http://enable-cors.org).
 
-For the simplest and most common use case, where the entire API should be accessible from inside the browser, enablign CORS is as simple as including this HTTP header in all responses:
+For the simplest and most common use case, where the entire API should be accessible from inside the browser, enabling CORS is as simple as including this HTTP header in all responses:
 
 ```
 Access-Control-Allow-Origin: *
 ```
 
 It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients, like [jQuery](https://jquery.com).
+
+For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) or [Mozilla's guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
 **What about JSONP?**
 
