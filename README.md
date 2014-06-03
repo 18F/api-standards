@@ -23,16 +23,22 @@ The #1 best way to understand and address the weaknesses in an API's design and 
 
 Whenever feasible, design an API in parallel with an accompanying integration of that API.
 
-### Provide a point of contact
+### Point of contact
 
 Have an obvious mechanism for clients to report issues and ask questions about the API.
 
-Some common, non-exclusive ways to handle this:
+Some common, non-exclusive ways to do this:
 
 * An issue tracker. If the API's code is on GitHub, it could use the repo's [associated Issue system](https://github.com/FDA/openfda/issues).
 * A tag on [StackOverflow](https://stackoverflow.com/) or a [Stack Exchange](https://opendata.stackexchange.com).
 * A [mailing list](https://groups.google.com/forum/#!forum/sunlightlabs-api-discuss).
 * A specific email address.
+
+### Notifications of updates
+
+Have a simple mechanism for clients to follow changes to the API.
+
+Common ways to do this include a mailing list, or a [dedicated developer blog](https://developer.github.com/changes/) with an RSS feed.
 
 ### API Endpoints
 
