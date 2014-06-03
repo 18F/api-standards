@@ -9,13 +9,19 @@ This document is meant to provide a mix of:
 * High level design guidance, that individual APIs will interpret to meet their needs.
 * Low level web practices, that just about every modern HTTP API should use.
 
-## Common use cases
+### Common use cases
 
 For APIs that syndicate data, consider several common client use cases:
 
 * **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of your dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
 * **Staying up to date.** Especially for large datasets, clients may want to keep "in sync" with a dataset without having to re-download everything. If this is a use case for the API, prioritize this in the design.
 * **Driving expensive actions.** (AKA: the [IFTTT](https://ifttt.com) test.) Consider what would happen if someone wanted to fire off automatic text messages to thousands of people, or light up the side of a skyscraper, every time a new record appears. Will the API's records always be in a reliable, unchanging order? Do records tend to appear in clumps, or in a steady stream? Generally speaking, consider the "entropy" an API client would experience.
+
+### Using your own API
+
+The #1 best way to understand and address the weaknesses in an API's design and implementation is to use it in a production system.
+
+Whenever feasible, design an API in parallel with an accompanying integration of that API.
 
 ### API Endpoints
 
@@ -39,9 +45,9 @@ Generally speaking:
 
 Some examples of these principles in action:
 
+* [FBOpen API documentation](http://docs.fbopen.apiary.io/)
 * [OpenFDA example query](http://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
-* [FBOpen API documentation](http://docs.fbopen.apiary.io/)
 
 ## Just use JSON
 
