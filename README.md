@@ -15,7 +15,7 @@ For APIs that syndicate data, consider several common client use cases:
 
 * **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
 * **Staying up to date.** Especially for large datasets, clients may want to keep "in sync" with a dataset without having to re-download everything. If this is a use case for the API, prioritize this in the design.
-* **Driving expensive actions.** (AKA: the [IFTTT](https://ifttt.com) test.) Consider what would happen if someone wanted to fire off automatic text messages to thousands of people, or light up the side of a skyscraper, every time a new record appears. Will the API's records always be in a reliable, unchanging order? Do records tend to appear in clumps, or in a steady stream? Generally speaking, consider the "entropy" an API client would experience.
+* **Driving expensive actions.** What would happen if someone wanted to fire off automatic text messages to thousands of people, or light up the side of a skyscraper, every time a new record appears? Consider whether the API's records always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
 
 ### Using one's own API
 
@@ -27,12 +27,7 @@ Whenever feasible, design an API in parallel with an accompanying integration of
 
 Have an obvious mechanism for clients to report issues and ask questions about the API.
 
-Some common, non-exclusive ways to do this:
-
-* An issue tracker. If the API's code is on GitHub, it could use the repo's [associated Issue system](https://github.com/FDA/openfda/issues).
-* A tag on [StackOverflow](https://stackoverflow.com/) or a [Stack Exchange](https://opendata.stackexchange.com).
-* A [mailing list](https://groups.google.com/forum/#!forum/sunlightlabs-api-discuss).
-* A specific email address.
+When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
 
 ### Notifications of updates
 
