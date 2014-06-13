@@ -109,7 +109,7 @@ Common patterns:
 
 #### Metadata
 
-In paginated responses, include enough metadata so that clients can calculate how many pages of data there are, and how and whether to fetch the next page.
+Include enough metadata so that clients can calculate how much data there is, and how and whether to fetch the next set of results.
 
 Example of how that might be implemented:
 
