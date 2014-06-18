@@ -1,13 +1,13 @@
 # 18F API Standards
 
-This document captures 18F's view of API best practices and standards. We aim to incorporate as many of them as possible in our work.
+This document captures 18F's view of API best practices and standards. We aim to incorporate as many of them as possible into our work.
 
-APIs, like other web applications, will vary greatly in implementation and design, depending on the situation and the goal the application is solving.
+APIs, like other web applications, will vary greatly in implementation and design, depending on the situation and the problem the application is solving.
 
 This document is meant to provide a mix of:
 
-* High level design guidance, that individual APIs will interpret to meet their needs.
-* Low level web practices, that just about every modern HTTP API should use.
+* **High level design guidance** that individual APIs will interpret to meet their needs.
+* **Low level web practices** that most modern HTTP APIs use.
 
 ### Design for common use cases
 
