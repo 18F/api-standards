@@ -73,6 +73,15 @@ General JSON guidelines:
 * **Don't use unpredictable keys**. Parsing a JSON response where keys are unpredictable (e.g. derived from data) is difficult, and adds friction for clients.
 * **Use `under_score` case for keys**. Different languages use different case conventions. JSON uses `under_score`, not `camelCase`.
 
+### API Keys
+
+These standards don't take a position on whether or not to use API keys, at this time.
+
+But _if_ keys are used to manage and authenticate API access, the API should still allow unauthenticated access without keys, subject to reasonable rate limits.
+
+This allows the API to be used and experimented with by newcomers, in demo environments, and with simple `curl`/`wget`/etc. requests. Allowing a certain level of normal, production use of the API, without enforcing advance registration by clients, may also be a product goal.
+
+
 ### Error handling
 
 Handle all errors (including otherwise uncaught exceptions) and return a data structure in the same format as the rest of the API.
