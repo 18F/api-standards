@@ -75,11 +75,13 @@ General JSON guidelines:
 
 ### API Keys
 
-These standards don't take a position on whether or not to use API keys, at this time.
+These standards don't take a position on whether or not to use API keys.
 
-But _if_ keys are used to manage and authenticate API access, the API should still allow unauthenticated access without keys, subject to reasonable rate limits.
+But _if_ keys are used to manage and authenticate API access, the API should still allow some sort of unauthenticated access, without keys.
 
-This allows the API to be used and experimented with by newcomers, in demo environments, and with simple `curl`/`wget`/etc. requests. Allowing a certain level of normal, production use of the API, without enforcing advance registration by clients, may also be a product goal.
+This allows the API to be used and experimented with by newcomers, in demo environments, and with simple `curl`/`wget`/etc. requests.
+
+It may also be a produict goal to allow a certain level of normal, production use of the API, without enforcing advance registration by clients.
 
 
 ### Error handling
