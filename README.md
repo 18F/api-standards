@@ -6,7 +6,7 @@ APIs, like other web applications, will vary greatly in implementation and desig
 
 This document is meant to provide a mix of:
 
-* **High level design guidance** that individual APIs will interpret to meet their needs.
+* **High level design guidance** that individual APIs interpret to meet their needs.
 * **Low level web practices** that most modern HTTP APIs use.
 
 ### Design for common use cases
@@ -14,8 +14,8 @@ This document is meant to provide a mix of:
 For APIs that syndicate data, consider several common client use cases:
 
 * **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
-* **Staying up to date.** Especially for large datasets, clients may want to keep "in sync" with a dataset without having to re-download everything. If this is a use case for the API, prioritize this in the design.
-* **Driving expensive actions.** What would happen if someone wanted to fire off automatic text messages to thousands of people, or light up the side of a skyscraper, every time a new record appears? Consider whether the API's records always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
+* **Staying up to date.** Especially for large datasets, clients may want to keep "in sync" with a dataset without having to re-download everything. If this is a use case for the API, prioritize it in the design.
+* **Driving expensive actions.** What would happen if someone wanted to fire off automatic text messages to thousands of people, or light up the side of a skyscraper, every time a new record appears? Consider whether the API's records will always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
 
 ### Using one's own API
 
@@ -63,9 +63,9 @@ Some examples of these principles in action:
 
 ### Just use JSON
 
-[JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, extremely widely supported transport format, suitable for many web APIs.
+[JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
 
-Supporting JSON and only JSON is a practical default for APIs, and generally reduces complexity both for the API provider and consumer.
+Supporting JSON and only JSON is a practical default for APIs, and generally reduces complexity for both the API provider and consumer.
 
 General JSON guidelines:
 
@@ -75,13 +75,13 @@ General JSON guidelines:
 
 ### API Keys
 
-These standards don't take a position on whether or not to use API keys.
+These standards do not take a position on whether or not to use API keys.
 
-But _if_ keys are used to manage and authenticate API access, the API should still allow some sort of unauthenticated access, without keys.
+But _if_ keys are used to manage and authenticate API access, the API should allow some sort of unauthenticated access, without keys.
 
-This allows the API to be used and experimented with by newcomers, in demo environments, and with simple `curl`/`wget`/etc. requests.
+This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
 
-It may also be a produict goal to allow a certain level of normal, production use of the API, without enforcing advance registration by clients.
+Consider whether one of your product goals is to allow a certain level of normal production use of the API without enforcing advanced registration by clients.
 
 
 ### Error handling
