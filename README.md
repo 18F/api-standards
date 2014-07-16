@@ -73,6 +73,15 @@ General JSON guidelines:
 * **Don't use unpredictable keys**. Parsing a JSON response where keys are unpredictable (e.g. derived from data) is difficult, and adds friction for clients.
 * **Use `under_score` case for keys**. Different languages use different case conventions. JSON uses `under_score`, not `camelCase`.
 
+### Use a consistent date format
+
+And specifically, [use ISO 8601](https://xkcd.com/1179/), in UTC.
+
+For just dates, that looks like `2013-02-27`. For full times, that's of the form `2013-02-27T10:00:00Z`.
+
+This date format is used all over the web, and puts each field in consistent order -- from least granular to most granular.
+
+
 ### API Keys
 
 These standards do not take a position on whether or not to use API keys.
