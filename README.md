@@ -6,16 +6,16 @@ APIs, like other web applications, vary greatly in implementation and design, de
 
 This document provides a mix of:
 
-* **High level design guidance** that individual APIs will interpret to meet their needs.
+* **High level design guidance** that individual APIs interpret to meet their needs.
 * **Low level web practices** that most modern HTTP APIs use.
 
 ### Design for common use cases
 
 For APIs that syndicate data, consider several common client use cases:
 
-* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might want to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API doesn't offer a simple bulk data download, provide a separate mechanism for acquiring the backing dataset in bulk.
-* **Staying up to date.** Especially for large datasets, clients may want to keep their dataset up to date without downloading the data set after every change. If this is a use case for the API, prioritize this in the design.
-* **Driving expensive actions.** What would happen if a client wanted to automatically send text messages to thousands of people or light up the side of a skyscraper every time a new record appears? Consider whether the API's records always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
+* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
+* **Staying up to date.** Especially for large datasets, clients may want to keep their dataset up to date without downloading the data set after every change. If this is a use case for the API, prioritize it in the design.
+* **Driving expensive actions.** What would happen if a client wanted to automatically send text messages to thousands of people or light up the side of a skyscraper every time a new record appears? Consider whether the API's records will always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.\
 
 ### Using one's own API
 
@@ -63,15 +63,35 @@ Some examples of these principles in action:
 
 ### Just use JSON
 
-[JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, extremely widely supported transport format, suitable for many web APIs.
+[JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
 
-Supporting JSON and only JSON is a practical default for APIs, and generally reduces complexity both for the API provider and consumer.
+Supporting JSON and only JSON is a practical default for APIs, and generally reduces complexity for both the API provider and consumer.
 
 General JSON guidelines:
 
 * Responses should be **a JSON object** (not an array). Using an array to return results limits the ability to include metadata about results, and limits the API's ability to add additional top-level keys in the future.
 * **Don't use unpredictable keys**. Parsing a JSON response where keys are unpredictable (e.g. derived from data) is difficult, and adds friction for clients.
 * **Use `under_score` case for keys**. Different languages use different case conventions. JSON uses `under_score`, not `camelCase`.
+
+### Use a consistent date format
+
+And specifically, [use ISO 8601](https://xkcd.com/1179/), in UTC.
+
+For just dates, that looks like `2013-02-27`. For full times, that's of the form `2013-02-27T10:00:00Z`.
+
+This date format is used all over the web, and puts each field in consistent order -- from least granular to most granular.
+
+
+### API Keys
+
+These standards do not take a position on whether or not to use API keys.
+
+But _if_ keys are used to manage and authenticate API access, the API should allow some sort of unauthenticated access, without keys.
+
+This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
+
+Consider whether one of your product goals is to allow a certain level of normal production use of the API without enforcing advanced registration by clients.
+
 
 ### Error handling
 
@@ -88,11 +108,6 @@ For example, a JSON API might provide the following when an uncaught exception o
 ```
 
 HTTP responses with error details should use a `4XX` status code to indicate a client-side failure (such as invalid authorization, or an invalid parameter), and a `5XX` status code to indicate server-side failure (such as an uncaught exception).
-
-
-### Versioning
-
-[TBD pending discussion in [#5](https://github.com/18F/api-standards/issues/5)].
 
 
 ### Pagination
@@ -138,6 +153,23 @@ HTTPS should be configured using modern best practices, including ciphers that s
 For an existing API that runs over plain HTTP, the first step is to add HTTPS support, and update the documentation to declare it the default, use it in examples, etc.
 
 Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
+
+#### Server Name Indication
+
+If you can, use [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
+
+SNI is an extension to TLS, [first proposed in 2003](http://tools.ietf.org/html/rfc3546), that allows SSL certificates for multiple domains to be served from a single IP address.
+
+Using one IP address to host multiple HTTPS-enabled domains can significantly lower costs and complexity in server hosting and administration. This is especially true as IPv4 addresses become more rare and costly. SNI is a Good Idea, and it is widely supported.
+
+However, some clients and networks still do not properly support SNI. As of this writing, that includes:
+
+* Internet Explorer 8 and below on Windows XP
+* Android 2.3 (Gingerbread) and below.
+* All versions of Python 2.x (a version of Python 2.x with SNI [is planned](http://legacy.python.org/dev/peps/pep-0466/)).
+* Some enterprise network environments have been configured in some custom way that disables or interferes with SNI support. One identified network where this is the case: the White House.
+
+When implementing SSL support for an API, evaluate whether SNI support makes sense for the audience it serves.
 
 ### Use UTF-8
 
