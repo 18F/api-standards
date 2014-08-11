@@ -101,7 +101,6 @@ For example, a JSON API might provide the following when an uncaught exception o
 
 ```json
 {
-  "status" : 500,
   "message": "Description of the error.",
   "exception": "[detailed stacktrace]"
 }
