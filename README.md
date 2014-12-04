@@ -42,7 +42,7 @@ Common ways to do this include a mailing list, or a [dedicated developer blog](h
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` or `POST`)
-* The URL path (e.g. `/posts`)
+* The URL path (e.g. `/articles`)
 
 Information can be passed to an endpoint in either of two ways:
 
