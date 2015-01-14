@@ -59,7 +59,7 @@ Generally speaking:
 
 Some examples of these principles in action:
 
-* [FBOpen API documentation](http://docs.fbopen.apiary.io)
+* [FBOpen API documentation](http://18f.github.io/fbopen/)
 * [OpenFDA example query](http://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
