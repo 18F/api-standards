@@ -1,186 +1,181 @@
-# 18F API Standards
+# Estándares para APIs
 
-**[18F](https://18f.gsa.gov/)** is a technology team inside the US federal government. 18F is very API-focused: our first project was an [API for business opportunities](https://fbopen.gsa.gov/).
+Este documento encapsula los estádares y prácticas de Mexico Abierto, basado en los estándares propuestos por [18F](https://github.com/18F/api-standards).
 
-This document captures **18F's view of API best practices and standards**. We aim to incorporate as many of them as possible into our work.
+APIs, como cualquier otra aplicación web, varían en gran medida en implementación y diseño, dependiendo de la situciación y el problema que la aplicación resuelva.
 
-APIs, like other web applications, vary greatly in implementation and design, depending on the situation and the problem the application is solving.
+Este documento provee una mezcla de:
 
-This document provides a mix of:
+* **Guía de diseño de alto nivel** que APIs individuales interpretan para cubrir sus necesidades.
+* **Prácticas de bajo nivel** que la mayoría de APIs HTTP modenas utiizan.
 
-* **High level design guidance** that individual APIs interpret to meet their needs.
-* **Low level web practices** that most modern HTTP APIs use.
+### Diseña para casos de uso comunes
 
-### Design for common use cases
+Para APIs que organizan información, se deben considerar casos de uso comunes:
 
-For APIs that syndicate data, consider several common client use cases:
+* **Datos a granel.** Los clientes frecuentemente buscan establecer su propia copía de los conjuntos de datos del API en su totalidad. Por ejemplo, alguién podría intentar crear su propio buscador sobre el dataset, utilizando parametros y tecnologías distintas que los "oficiales" que el API soporta. Si el no puede actuar fácilmente como un proveedor de datos, provee un mecanismo separado para adquirir el conjunto de datos.
+* **Manteniendose al día.** Especialmente para grandes conjuntos de datos, los clientes pueden buscar mantener sus conjuntos de datos actualiados sin requerir descargar el conjunto de datos después de cada actualización. Si este es un caso de uso para el API, prioriza en su diseño.
+* **Manejando acciones costosas.** ¿Que pasaría si un cliente buscará enviar mensajes de texto a miles de personas automáticamente o intentará iluminar la pared lateral de un rascacielos cada vez que un nuevo conjunto de datos apareza? Considera si los records del API se encontrarán siempre en un orden confiable e inmutable, y sí tienden a aparecer en grupos o en un flujo estable. En términos generales, considera la "entropía" que un cliente del API experimentaría.
 
-* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
-* **Staying up to date.** Especially for large datasets, clients may want to keep their dataset up to date without downloading the data set after every change. If this is a use case for the API, prioritize it in the design.
-* **Driving expensive actions.** What would happen if a client wanted to automatically send text messages to thousands of people or light up the side of a skyscraper every time a new record appears? Consider whether the API's records will always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
+### Utiliza tu propia API
 
-### Using one's own API
+La mejor manera para entender y resolver las debilidades en el diseño e implementación de un API es utilizarla en un sistema en producción.
 
-The #1 best way to understand and address the weaknesses in an API's design and implementation is to use it in a production system.
+Cuando sea factible, diseña el API en paralelo con la integración de la misma.
 
-Whenever feasible, design an API in parallel with an accompanying integration of that API.
+### Punto de contacto
 
-### Point of contact
+Crea un mecanismo obvio para clientes para reportasr problemas y realizar preguntas sobre el API.
 
-Have an obvious mechanism for clients to report issues and ask questions about the API.
+Cuando utilices GitHub para el código de un API, utiliza el seguimiento de incidencias asociado. Adicionalmente, publica una dirección de correo electrónico para consultas privadas directas.
 
-When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+### Notificaciones sobre actualizaciones
 
-### Notifications of updates
+Crea un mecanismo simple para que los clientes puedan consultar actualizaciones al API.
 
-Have a simple mechanism for clients to follow changes to the API.
+Medios comunes para esto pueden ser una lista de correo, o un [blog de desarrollo dedicado](https://developer.github.com/changes/) con un feed RSS.
 
-Common ways to do this include a mailing list, or a [dedicated developer blog](https://developer.github.com/changes/) with an RSS feed.
+### Puntos de acceso
 
-### API Endpoints
+Un punto de acceso es una combinación de dos cosas:
 
-An "endpoint" is a combination of two things:
+* El verbo (ej. `GET` o `POST`)
+* La ruta URL ( ej. `/articles` )
 
-* The verb (e.g. `GET` or `POST`)
-* The URL path (e.g. `/articles`)
+Datos pueden ser enviados a un punto de acceso en una de dos maneras:
 
-Information can be passed to an endpoint in either of two ways:
+* Parámetros de consulta del URL (ej. `?year=2014`)
+* Encabezados HTTP (ej. `X-Api-Key: my-key`)
 
-* The URL query string (e.g. `?year=2014`)
-* HTTP headers (e.g. `X-Api-Key: my-key`)
+Hoy en día cuando las personas dicen "tipo REST", realmente se refieren al diseño de puntos de acceso simples, intuitivos y que representan funciones específicas en el API.
 
-When people say "RESTful" nowadays, they really mean designing simple, intuitive endpoints that represent unique functions in the API.
+En términos generales:
 
-Generally speaking:
 
-* **Avoid single-endpoint APIs.** Don't jam multiple operations into the same endpoint with the same HTTP verb.
-* **Prioritize simplicity.** It should be easy to guess what an endpoint does by looking at the URL and HTTP verb, without needing to see a query string.
-* Endpoint URLs should advertise resources, and **avoid verbs**.
+* **Evita puntos de acceso únicos.** No encapsules múltiples operaciones en el mismo punto de acceso con el mísmo verbo HTTP.
+* **Prioriza la simplicidad.** Debería ser trivial deducir la acción que realiza un punto de acceso mediante la ruta y el verbo HTTP, sin necesidad de ver la cadena de consulta.
+* Punto de acceso URL deben anunciar recursos, y **evitar verbos**.
 
-Some examples of these principles in action:
+Algunos ejemplos de estos principios en acción:
 
 * [FBOpen API documentation](https://18f.github.io/fbopen/)
 * [OpenFDA example query](http://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
-### Just use JSON
+### Utiliza JSON
 
-[JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
+[JSON](https://es.wikipedia.org/wiki/JSON) es un formato de transporte excelente y ampliamente soportado, adecuado para muchas APIs web.
 
-Supporting JSON and only JSON is a practical default for APIs, and generally reduces complexity for both the API provider and consumer.
+Soportar JSON y solamente JSON es un caso por defecto practico para APIs, y generalmente reduce la complejidad tanto para el proveedor del API como para el consumidor de la misma.
 
-General JSON guidelines:
+Directrices generales JSON:
 
-* Responses should be **a JSON object** (not an array). Using an array to return results limits the ability to include metadata about results, and limits the API's ability to add additional top-level keys in the future.
-* **Don't use unpredictable keys**. Parsing a JSON response where keys are unpredictable (e.g. derived from data) is difficult, and adds friction for clients.
-* **Use `under_score` case for keys**. Different languages use different case conventions. JSON uses `under_score`, not `camelCase`.
+* Las respuestas deben ser **un objeto JSON** (no un arreglo). Utilizando un arreglo para emitir resultados límita la habilidad para incluir metadatos sobre los resultados, y límita la capacidad futura del API para añadir campos de nivel superior al documento JSON.
+* **No utilices campos impredecibles**. Procesar una respuesta JSON donde los campos son impredecibles (ej. derivados de información) es díficil, y añade fricción para los clientes.
+* **Utiliza nomenclatura de `guión_bajo` para campos**. Diferentes lenguajes utilizan nomenclatura diferente. JSON utiliza `guión_bajo`, no `camelCase`.
 
-### Use a consistent date format
+### Utiliza un formato de fechas consistente
 
-And specifically, [use ISO 8601](https://xkcd.com/1179/), in UTC.
+Y específicamente, [utiliza ISO 8601](https://xkcd.com/1179/), en UTC.
 
-For just dates, that looks like `2013-02-27`. For full times, that's of the form `2013-02-27T10:00:00Z`.
+Únicamente para fechas, eso sería algo como `2013-02-27`. Para fecha y hora, es de la forma `2013-02-27T10:00:00Z`.
 
-This date format is used all over the web, and puts each field in consistent order -- from least granular to most granular.
+Este formato de fechas es utilizado ampliamente en la web, y coloca cada campo en un orden consistente -- del menos específico al más específico.
 
+### Llaves de API
 
-### API Keys
+Este estándar no toma una posición al respecto de utilizar o no llaves para el API.
 
-These standards do not take a position on whether or not to use API keys.
+Pero _si_ llaves son utilizadas para manejar y autenticar el acceso al API, la misma debería permitir algún tipo de acceso sin autenticación, sin utilizar llaves.
 
-But _if_ keys are used to manage and authenticate API access, the API should allow some sort of unauthenticated access, without keys.
+Esto permite a nuevos usuarios utilizar y experimentar con el API en ambientes demo y con solitictudes `curl`/`wget`/etc. simples.
 
-This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
+Considera si una de las metas del producto es permitir un cierto nivel de uso del API en producción sin necesidad de registro por parte de los clientes.
 
-Consider whether one of your product goals is to allow a certain level of normal production use of the API without enforcing advanced registration by clients.
+### Manejo de errores
 
+Maneja todos los errores (incluyendo excepciones no capturadas) y regresa una estructura de datos en el mismo formato que el resto del API.
 
-### Error handling
-
-Handle all errors (including otherwise uncaught exceptions) and return a data structure in the same format as the rest of the API.
-
-For example, a JSON API might provide the following when an uncaught exception occurs:
+Por ejemplo, una API JSON puede regresar la siguiente respuesta cuando una excepción no capturada ocurre:
 
 ```json
 {
-  "message": "Description of the error.",
-  "exception": "[detailed stacktrace]"
+	"message": "Descripción del error.",
+	"exception": "[stacktrace detallado]"
 }
 ```
 
-HTTP responses with error details should use a `4XX` status code to indicate a client-side failure (such as invalid authorization, or an invalid parameter), and a `5XX` status code to indicate server-side failure (such as an uncaught exception).
+Respuestas HTTP con detalles de errores deben utilizar un código de estatus `4xx` para indicar una falla en el lado del cliente (como autorización inválida, o parámetros inválidos), y un código de estatus `5xx` para indicar una falla en el lado del servidor (una excepción no capturada).
 
+### Paginación
 
-### Pagination
+Si para navegar los conjuntos de datos, paginación es requerida, utiliza el método que haga más sentido a los datos del API.
 
-If pagination is required to navigate datasets, use the method that makes the most sense for the API's data.
+#### Parámetros
 
-#### Parameters
+Patrones comunes:
 
-Common patterns:
+* `page` y `per_page`. Intuitivo para muchos casos de usos. Enlaces a "página 2" pueden no contener siempre la misma información.
+* `offset` y `limit`. Este estándar se deriva del mundo de las bases de datos SQL, y es una buena opción cuando enlaces permanentes a resultados son requeridos.
+* `since` y `limit`. Obtener todo "desde" algún ID o marca de tiempo. Útil cuando es una prioridad permitir a los clientes mantenrse "sincronizados" de un modo efectivo con los datos. Generalmente requiere que el orden de los resultados sea muy estable.
 
-* `page` and `per_page`. Intuitive for many use cases. Links to "page 2" may not always contain the same data.
-* `offset` and `limit`. This standard comes from the SQL database world, and is a good option when you need stable permalinks to result sets.
-* `since` and `limit`. Get everything "since" some ID or timestamp. Useful when it's a priority to let clients efficiently stay "in sync" with data. Generally requires result set order to be very stable.
+#### Metadatos
 
-#### Metadata
+Incluye suficientes metadatos de modo que los clientes puedan calcular que tantos más resultados existen, y como obtener el siguiente grupo de resultados.
 
-Include enough metadata so that clients can calculate how much data there is, and how and whether to fetch the next set of results.
-
-Example of how that might be implemented:
+Ejemplo de como puede ser implementado:
 
 ```json
 {
-  "results": [ ... actual results ... ],
-  "pagination": {
-    "count": 2340,
-    "page": 4,
-    "per_page": 20
-  }
+	"results": [ ... conjuntos de datos ...],
+	"pagination": {
+		"count": 2340,
+		"page": 4,
+		"per_page": 20
+	}
 }
 ```
+### Siempre utiliza HTTPS
 
-### Always use HTTPS
+Cualquier nueva API debe utilizar y requerir [encripción HTTPS](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure) (utilizando TLS/SSL). HTTPS provee:
 
-Any new API should use and require [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). HTTPS provides:
+* **Seguridad**. El contenido de las peticiones están encriptidas a través de internet.
+* **Autenticidad**. Una fuerte garantía de que los clientes se comunican con el API real.
+* **Privacidad**. Privacidad aumentada para aplicaciones y usuarios que utilizan el API. Encabezados HTTP y los parámetros de consulta (entre otros) estarán encriptados.
+* **Compatibilidad**. Compatibiladad del lado cliente más amplia. Para que peticiones CORS (Cross-Origin Request Sharing) al API funcionen en sitios con HTTPS -- para que no sean bloqueadas como contenido perdido -- esas peticiones deben ser enviadas sobre HTTPS.
 
-* **Security**. The contents of the request are encrypted across the Internet.
-* **Authenticity**. A stronger guarantee that a client is communicating with the real API.
-* **Privacy**. Enhanced privacy for apps and users using the API. HTTP headers and query string parameters (among other things) will be encrypted.
-* **Compatibility**. Broader client-side compatibility. For CORS requests to the API to work on HTTPS websites -- to not be blocked as mixed content -- those requests must be over HTTPS.
+HTTPS debe ser configurada utilizando prácticas estándares modenas, incluyendo cifrados que soporten [_forward secrecy_ (secreto-perfecto-hacía-adelante)](http://es.wikipedia.org/wiki/Perfect_forward_secrecy), y [Seguridad de Transporte HTTP Estricta](http://es.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **Esto no es comprensivo**: utiliza herramientas como [_SSL Labs_](ssllabs.com/ssltest/analyze.html) para evaluar la configuración HTTPS del API.
 
-HTTPS should be configured using modern best practices, including ciphers that support [forward secrecy](http://en.wikipedia.org/wiki/Forward_secrecy), and [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **This is not exhaustive**: use tools like [SSL Labs](ssllabs.com/ssltest/analyze.html) to evaluate an API's HTTPS configuration.
+Para una API existente que utiliza HTTP, el primer paso es añadir soporte HTTPS, y actualizar la documentación para declararlo como el método por defecto, usarlo en ejemplos, etc.
 
-For an existing API that runs over plain HTTP, the first step is to add HTTPS support, and update the documentation to declare it the default, use it in examples, etc.
+Después, evalúa la viabilidad de desactivar o redireccionar peticiones HTTP. Ver [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) para una discusión de algunos conflictos involucrados con la transición de HTTP->HTTPS.
 
-Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
+#### Indicación de Nombre de Servidor
 
-#### Server Name Indication
+De ser posible, utiliza [_Server Name Indication_ (Indicación de Nombre de Servidor)](http://es.wikipedia.org/wiki/Server_Name_Indication) (SNI) para servir peticiones HTTPS.
 
-If you can, use [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
+SNI es una extensión del protocolo TLS, [propuesto inicialmente en 2003](http://tools.ietf.org/html/rfc3546), esto permite certificados SSL para que múltiples dominios utilicen una misma dirección IP.
 
-SNI is an extension to TLS, [first proposed in 2003](http://tools.ietf.org/html/rfc3546), that allows SSL certificates for multiple domains to be served from a single IP address.
+Utilizar una dirección IP para alberar múltiples dominios con HTTPS habilitado puede disminuir  significativamente costos y complejidad en la amdinistración y alojamiento del servidor. Esto es especialmente verdadero conforme direcciones IPv4 se vuelven escasas y costosas. SNI es una buena idea, y es ampliamente soportado.
 
-Using one IP address to host multiple HTTPS-enabled domains can significantly lower costs and complexity in server hosting and administration. This is especially true as IPv4 addresses become more rare and costly. SNI is a Good Idea, and it is widely supported.
+Sin embargo, algunos clientes y redes siguen sin soportar propiamente SNI. Al momento de este escrito, eso incluye:
 
-However, some clients and networks still do not properly support SNI. As of this writing, that includes:
+* Internet Explorer 8 e inferiores en Windows XP.
+* Android 2.3 (Gingerbread) e inferiores.
+* Todas las versiones de Pythons 2.x (una versión de Python 2.x con SNI [está planeada](http://legacy.python.org/dev/peps/pep-0466/)).
+* Algunas redes coorporativas han sido configuradas en modos que deshabilitan o interfieren con soporte para SNI. Una red identificada donde este es el caso: la Casa Blanca.
 
-* Internet Explorer 8 and below on Windows XP
-* Android 2.3 (Gingerbread) and below.
-* All versions of Python 2.x (a version of Python 2.x with SNI [is planned](http://legacy.python.org/dev/peps/pep-0466/)).
-* Some enterprise network environments have been configured in some custom way that disables or interferes with SNI support. One identified network where this is the case: the White House.
+Al implementar soporte SSL para un API, evalua si el soporte para SNI hace sentido para la audiencia que sirve.
 
-When implementing SSL support for an API, evaluate whether SNI support makes sense for the audience it serves.
+### Utiliza UTF-8
 
-### Use UTF-8
+Sólo [utiliza UTF-8](http://utf8everywhere.org).
 
-Just [use UTF-8](http://utf8everywhere.org).
+Prepara el API para aceptar carácteres acentuados o "comillas tipográficas", aún cuando no sean esperados.
 
-Expect accented characters or "smart quotes" in API output, even if they're not expected.
+Un API debe informar a sus clientes de esperar UTF-8 incluyendo una notación de _charset_ en el encabezado `Content-Type` de las respuestas.
 
-An API should tell clients to expect UTF-8 by including a charset notation in the `Content-Type` header for responses.
-
-An API that returns JSON should use:
+Un API que responde con JSON debería utilizar:
 
 ```
 Content-Type: application/json; charset=utf-8
@@ -188,18 +183,18 @@ Content-Type: application/json; charset=utf-8
 
 ### CORS
 
-For clients to be able to use an API from inside web browsers, the API must [enable CORS](http://enable-cors.org).
+Para que los clientes puedan utilizar el API desde navegadores web, el API debe habilitar [CORS](http://enable-cors.org).
 
-For the simplest and most common use case, where the entire API should be accessible from inside the browser, enabling CORS is as simple as including this HTTP header in all responses:
+Para el más simple y más común caso de uso, donde toda la API debe ser accesible desde un navegador, habilitar CORS es tan simple como incluir el siguiente encabezado en todas las respuestas:
 
 ```
 Access-Control-Allow-Origin: *
 ```
 
-It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients, like [jQuery](https://jquery.com).
+Es soportado por [todos los navegadores modernos](http://enable-cors.org/client.html), y funcionará en la mayoría de clientes JavaScript, como [jQuery](https://jquery.com).
 
-For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) or [Mozilla's guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+Para configuración más avanzada, vea la [especificación W3C](http://www.w3.org/TR/cors/) o la [guía de Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
-**What about JSONP?**
+**¿Qué hay de JSONP?**
 
-JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
+JSONP [no es seguro o eficiente](https://gist.github.com/tmcw/6244497). Si se requiere soporte para IE8 o IE9, utiliza objetos [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) de Microsoft en lugar de JSONP. Existen [librerías](https://github.com/mapbox/corslite) para ayudar con esto.
