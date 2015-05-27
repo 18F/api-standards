@@ -13,8 +13,8 @@ Este documento provee una mezcla de:
 
 Para APIs que organizan información, se deben considerar casos de uso comunes:
 
-* **Datos a granel.** Los clientes frecuentemente buscan establecer su propia copia de los conjuntos de datos del API en su totalidad. Por ejemplo, alguién podría intentar crear su propio buscador sobre el dataset, utilizando parámetros y tecnologías distintas que los "oficiales" que el API soporta. Si el no puede actuar fácilmente como un proveedor de datos, provee un mecanismo separado para adquirir el conjunto de datos.
-* **Manteniendose al día.** Especialmente para grandes conjuntos de datos, los clientes pueden buscar mantener sus conjuntos de datos actualizados sin requerir descargar el conjunto de datos después de cada actualización. Si este es un caso de uso para el API, prioriza en su diseño.
+* **Datos a granel.** Los clientes frecuentemente buscan establecer su propia copia de los conjuntos de datos del API en su totalidad. Por ejemplo, alguién podría intentar crear su propio buscador sobre el dataset, utilizando parámetros y tecnologías distintas que los "oficiales" que el API soporta. Si el API no puede actuar fácilmente como un proveedor de datos, provee un mecanismo separado para adquirir el conjunto de datos.
+* **Manteniendose al día.** Especialmente para grandes conjuntos de datos, los clientes pueden buscar mantener sus conjuntos de datos actualizados sin requerir descargar el conjunto de datos después de cada actualización. Si este es un caso de uso para el API, priorizalo en el diseño.
 * **Manejando acciones costosas.** ¿Que pasaría si un cliente buscara enviar mensajes de texto a miles de personas automáticamente o intentara iluminar la pared lateral de un rascacielos cada vez que un nuevo conjunto de datos aparezca? Considera si los registros del API se encontrarán siempre en un orden confiable e inmutable, y si tienden a aparecer en grupos o en un flujo estable. En términos generales, considera la "entropía" que un cliente del API experimentaría.
 
 ### Utiliza tu propia API
@@ -33,7 +33,7 @@ Cuando utilices GitHub para el código de un API, utiliza el seguimiento de inci
 
 Crea un mecanismo simple para que los clientes puedan consultar actualizaciones al API.
 
-Medios comunes para esto pueden ser una lista de correo, o un [blog de desarrollo dedicado](https://developer.github.com/changes/) con un feed RSS.
+Medios comunes para esto pueden ser una lista de correo, o un [blog dedicado a desarrollo](https://developer.github.com/changes/) con un feed RSS.
 
 ### Puntos de acceso
 
@@ -54,7 +54,7 @@ En términos generales:
 
 * **Evita puntos de acceso únicos.** No encapsules múltiples operaciones en el mismo punto de acceso con el mismo verbo HTTP.
 * **Prioriza la simplicidad.** Debería ser trivial deducir la acción que realiza un punto de acceso mediante la ruta y el verbo HTTP, sin necesidad de ver la cadena de consulta.
-* Punto de acceso URL deben anunciar recursos, y **evitar verbos**.
+* Los puntos de acceso URL deberián representar recursos, y **evitar verbos**.
 
 Algunos ejemplos de estos principios en acción:
 
@@ -109,7 +109,7 @@ Respuestas HTTP con detalles de errores deben utilizar un código de estatus `4x
 
 ### Paginación
 
-Si para navegar los conjuntos de datos, paginación es requerida, utiliza el método que haga más sentido a los datos del API.
+Si para navegar los conjuntos de datos se requiere de paginación, utiliza el método que haga más sentido a los datos del API.
 
 #### Parámetros
 
@@ -142,9 +142,9 @@ Cualquier nueva API debe utilizar y requerir [encripción HTTPS](https://es.wiki
 * **Seguridad**. El contenido de las peticiones están encriptidas a través de internet.
 * **Autenticidad**. Una fuerte garantía de que los clientes se comunican con el API real.
 * **Privacidad**. Privacidad aumentada para aplicaciones y usuarios que utilizan el API. Encabezados HTTP y los parámetros de consulta (entre otros) estarán encriptados.
-* **Compatibilidad**. Compatibiladad del lado cliente más amplia. Para que peticiones CORS (Cross-Origin Request Sharing) al API funcionen en sitios con HTTPS -- para que no sean bloqueadas como contenido perdido -- esas peticiones deben ser enviadas sobre HTTPS.
+* **Compatibilidad**. Compatibiladad del lado cliente más amplia. Para que peticiones CORS (Cross-Origin Request Sharing) al API funcionen en sitios con HTTPS -- para que no sean bloqueadas como contenido mixto -- deben ser enviadas sobre HTTPS.
 
-HTTPS debe ser configurada utilizando prácticas estándares modernas, incluyendo cifrados que soporten [_forward secrecy_ (secreto-perfecto-hacía-adelante)](http://es.wikipedia.org/wiki/Perfect_forward_secrecy), y [Seguridad de Transporte HTTP Estricta](http://es.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **Esto no es comprensivo**: utiliza herramientas como [_SSL Labs_](ssllabs.com/ssltest/analyze.html) para evaluar la configuración HTTPS del API.
+HTTPS debe ser configurada utilizando prácticas estándares modernas, incluyendo cifrados que soporten [_forward secrecy_ (secreto-perfecto-hacía-adelante)](http://es.wikipedia.org/wiki/Perfect_forward_secrecy), y [Seguridad de Transporte HTTP Estricta](http://es.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **Esta lista no es exhaustiva**: utiliza herramientas como [_SSL Labs_](ssllabs.com/ssltest/analyze.html) para evaluar la configuración HTTPS del API.
 
 Para una API existente que utiliza HTTP, el primer paso es añadir soporte HTTPS, y actualizar la documentación para declararlo como el método por defecto, usarlo en ejemplos, etc.
 
@@ -154,9 +154,9 @@ Después, evalúa la viabilidad de desactivar o redireccionar peticiones HTTP. V
 
 De ser posible, utiliza [_Server Name Indication_ (Indicación de Nombre de Servidor)](http://es.wikipedia.org/wiki/Server_Name_Indication) (SNI) para servir peticiones HTTPS.
 
-SNI es una extensión del protocolo TLS, [propuesto inicialmente en 2003](http://tools.ietf.org/html/rfc3546), esto permite certificados SSL para que múltiples dominios utilicen una misma dirección IP.
+SNI es una extensión del protocolo TLS, [propuesto inicialmente en 2003](http://tools.ietf.org/html/rfc3546), que permite utilizar certificados SSL para múltiples dominios bajo una misma dirección IP.
 
-Utilizar una dirección IP para alberar múltiples dominios con HTTPS habilitado puede disminuir significativamente costos y complejidad en la administración y alojamiento del servidor. Esto es especialmente verdadero conforme direcciones IPv4 se vuelven escasas y costosas. SNI es una buena idea, y es ampliamente soportado.
+Utilizar una dirección IP para hospedar múltiples dominios con HTTPS habilitado puede disminuir significativamente costos y complejidad en la administración y alojamiento del servidor. Esto es especialmente verdadero conforme direcciones IPv4 se vuelven escasas y costosas. SNI es una buena idea, y es ampliamente soportado.
 
 Sin embargo, algunos clientes y redes siguen sin soportar propiamente SNI. Al momento de este escrito, eso incluye:
 
