@@ -203,3 +203,15 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 **What about JSONP?**
 
 JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
+
+
+## Public domain
+
+This project is in the public domain within the United States, and
+copyright and related rights in the work worldwide are waived through
+the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+
+All contributions to this project will be released under the CC0
+dedication. By submitting a pull request, you are agreeing to comply
+with this waiver of copyright interest.
+
