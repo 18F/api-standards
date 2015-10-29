@@ -1,0 +1,57 @@
+---
+# .about.yml project metadata
+#
+# Short name that acts as the project identifier (required)
+name: api-standards
+
+# Full proper name of the project (required)
+full_name: API Standards
+
+# The type of content in the repo
+# values: app, docs, policy
+type: policy
+
+# Describes whether a project team, working group/guild, etc. owns the repo (required)
+# values: guild, working-group, project
+owner_type: individual
+
+# Maturity stage of the project (required)
+# values: discovery, alpha, beta, live, sunset, transfer, end
+stage: live
+
+# Description of the project
+description: 18F's view of API best practices and standards
+
+# Tags that describe the project or aspects of the project
+tags: [standards, best-practices, apis, guides]
+
+# Should be 'true' if the project has a continuous build (required)
+# values: true, false
+testable: false
+
+# Team members contributing to the project (required)
+# Items:
+# - github: GitHub user name
+#   id: Internal team identifier/user name
+#   role: Team member's role; leads should be designated as 'lead'
+ 
+# NOTE from arowla: In choosing team members, I went with contributors
+# who are still at 18F who have made at least 2 commits. Many other people
+# have made valuable contributions to this project.
+#
+team:
+  - github: konklone
+    id: eric
+    role: lead
+  - github: arowla
+    id: alison
+    role: contributor
+  - github: gbinal
+    id: gray
+    role: contributor
+
+# Licenses that apply to the project and/or its components (required)
+licenses:
+  api-standards:
+    name: CC0
+    url: https://github.com/18F/api-standards/blob/master/LICENSE.md
