@@ -43,6 +43,9 @@ team:
   - github: konklone
     id: eric
     role: lead
+  - github: adelevie
+    id: alan
+    role: lead
   - github: arowla
     id: alison
     role: contributor
