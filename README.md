@@ -60,7 +60,7 @@ Generally speaking:
 Some examples of these principles in action:
 
 * [FBOpen API documentation](https://18f.github.io/fbopen/)
-* [OpenFDA example query](http://open.fda.gov/api/reference/#example-query)
+* [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
 ### Just use JSON
@@ -149,15 +149,15 @@ Any new API should use and require [HTTPS encryption](https://en.wikipedia.org/w
 * **Privacy**. Enhanced privacy for apps and users using the API. HTTP headers and query string parameters (among other things) will be encrypted.
 * **Compatibility**. Broader client-side compatibility. For CORS requests to the API to work on HTTPS websites -- to not be blocked as mixed content -- those requests must be over HTTPS.
 
-HTTPS should be configured using modern best practices, including ciphers that support [forward secrecy](http://en.wikipedia.org/wiki/Forward_secrecy), and [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **This is not exhaustive**: use tools like [SSL Labs](ssllabs.com/ssltest/analyze.html) to evaluate an API's HTTPS configuration.
+HTTPS should be configured using modern best practices, including ciphers that support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), and [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **This is not exhaustive**: use tools like [SSL Labs](ssllabs.com/ssltest/analyze.html) to evaluate an API's HTTPS configuration.
 
 For an existing API that runs over plain HTTP, the first step is to add HTTPS support, and update the documentation to declare it the default, use it in examples, etc.
 
-Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
+Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/18F/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
 
 #### Server Name Indication
 
-If you can, use [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
+If you can, use [Server Name Indication](https://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
 
 SNI is an extension to TLS, [first proposed in 2003](http://tools.ietf.org/html/rfc3546), that allows SSL certificates for multiple domains to be served from a single IP address.
 
