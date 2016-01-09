@@ -13,7 +13,7 @@ type: policy
 
 # Describes whether a project team, working group/guild, etc. owns the repo (required)
 # values: guild, working-group, project
-owner_type: individual
+owner_type: project
 
 # Maturity stage of the project (required)
 # values: discovery, alpha, beta, live, sunset, transfer, end
