@@ -25,6 +25,9 @@ author:
 logourl: /assets/img/18f-logo.png
 logoalt: 18F logo
 
+# To expand all navigation bar entries by default, set this property to true:
+expand_nav: true
+
 # Navigation
 # List links that should appear in the site sidebar here
 navigation:
@@ -85,7 +88,6 @@ navigation:
   url: public-domain/
   internal: true
 
-
 repos:
 - name: Guides Template
   description: Main repository
@@ -96,6 +98,11 @@ back_link:
   text: Read more 18F Guides
 
 google_analytics_ua: UA-48605964-19
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
 
 defaults:
 - scope:

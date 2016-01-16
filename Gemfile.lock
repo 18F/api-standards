@@ -1,7 +1,7 @@
 PATH
   remote: ../guides-style
   specs:
-    guides_style_18f (0.1.5)
+    guides_style_18f (0.1.14)
       jekyll
       rouge
       sass

@@ -130,11 +130,13 @@ author:
 logourl: /assets/img/18f-logo.png
 logoalt: 18F logo
 
+# To expand all navigation bar entries by default, set this property to true:
+expand_nav: true
+
 # Navigation
 # List links that should appear in the site sidebar here
 navigation:
 #{nav}
-
 repos:
 - name: Guides Template
   description: Main repository
@@ -145,6 +147,11 @@ back_link:
   text: Read more 18F Guides
 
 google_analytics_ua: UA-48605964-19
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
 
 defaults:
 - scope:
@@ -178,10 +185,8 @@ END_OF_CONFIG
 
   def self.generate_pages(section)
     page = ['---']
+    page << "permalink: /" if section[:permalink] == '/'
     page << "title: \"#{section[:title]}\""
-    page << "permalink: #{section[:permalink]}"
-    parent = section[:parent]
-    page << "parent: \"#{parent[:title]}\"" unless parent.nil?
     page << '---'
     page << section[:content]
     children = section[:children] || []
@@ -189,12 +194,13 @@ END_OF_CONFIG
       filename: section[:filename],
       content: page.join("\n"),
     }
+    result[:parent_dir] = section[:parent][:permalink] if section[:parent]
     [result].concat(children.flat_map {|section| generate_pages section})
   end
 end
 
 basedir = File.dirname __FILE__
-pages_dir = File.join(basedir, 'pages')
+pages_dir = File.join(basedir, '_pages')
 config, pages = Pages18F.readme_to_pages(File.join(basedir, 'README.md'))
 
 File.write File.join(basedir, '_config.yml'), config
@@ -209,7 +215,11 @@ File.write File.join(css_dir, 'styles.scss'), <<END_OF_CSS
 END_OF_CSS
 
 Dir.mkdir pages_dir unless Dir.exist? pages_dir
+
 pages.each do |page|
-  path = File.join(pages_dir, page[:filename])
-  File.write path, page[:content]
+  parent_dir = page[:parent_dir]
+  parent_dir = parent_dir ? File.join(pages_dir, parent_dir) : pages_dir
+  FileUtils.mkdir_p(parent_dir) unless Dir.exist?(parent_dir)
+  path = File.join(parent_dir, page[:filename])
+  File.write(path, page[:content])
 end
