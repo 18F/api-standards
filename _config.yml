@@ -1,0 +1,111 @@
+markdown: redcarpet
+name: 18F API Standards
+exclude:
+- CONTRIBUTING.md
+- Gemfile
+- Gemfile.lock
+- LICENSE.md
+- README.md
+- go
+- vendor
+
+permalink: pretty
+highlighter: rouge
+incremental: true
+
+sass:
+  style: :compressed
+
+# Author/Organization info to be displayed in the templates
+author:
+  name: 18F
+  url: https://18f.gsa.gov
+
+# Point the logo URL at a file in your repo or hosted elsewhere by your organization
+logourl: /assets/img/18f-logo.png
+logoalt: 18F logo
+
+# To expand all navigation bar entries by default, set this property to true:
+expand_nav: true
+
+# Navigation
+# List links that should appear in the site sidebar here
+navigation:
+- text: Introduction
+  url: index.html
+  internal: true
+- text: Design for common use cases
+  url: design-for-common-use-cases/
+  internal: true
+- text: Using one's own API
+  url: using-one's-own-api/
+  internal: true
+- text: Point of contact
+  url: point-of-contact/
+  internal: true
+- text: Notifications of updates
+  url: notifications-of-updates/
+  internal: true
+- text: API Endpoints
+  url: api-endpoints/
+  internal: true
+- text: Just use JSON
+  url: just-use-json/
+  internal: true
+- text: Use a consistent date format
+  url: use-a-consistent-date-format/
+  internal: true
+- text: API Keys
+  url: api-keys/
+  internal: true
+- text: Error handling
+  url: error-handling/
+  internal: true
+- text: Pagination
+  url: pagination/
+  internal: true
+  children:
+  - text: Parameters
+    url: parameters/
+    internal: true
+  - text: Metadata
+    url: metadata/
+    internal: true
+- text: Always use HTTPS
+  url: always-use-https/
+  internal: true
+  children:
+  - text: Server Name Indication
+    url: server-name-indication/
+    internal: true
+- text: Use UTF-8
+  url: use-utf-8/
+  internal: true
+- text: CORS
+  url: cors/
+  internal: true
+- text: Public domain
+  url: public-domain/
+  internal: true
+
+repos:
+- name: Guides Template
+  description: Main repository
+  url: https://github.com/18F/guides-template
+
+back_link:
+  url: "https://pages.18f.gov/guides/"
+  text: Read more 18F Guides
+
+google_analytics_ua: UA-48605964-19
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: "guides_style_18f_default"
