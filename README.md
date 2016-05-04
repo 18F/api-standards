@@ -44,9 +44,10 @@ An "endpoint" is a combination of two things:
 * The verb (e.g. `GET` or `POST`)
 * The URL path (e.g. `/articles`)
 
-Information can be passed to an endpoint in either of two ways:
+Information can be passed to an endpoint in any combination of three ways:
 
 * The URL query string (e.g. `?year=2014`)
+* The request body (e.g. in a form `POST`, `year=2014`)
 * HTTP headers (e.g. `X-Api-Key: my-key`)
 
 When people say "RESTful" nowadays, they really mean designing simple, intuitive endpoints that represent unique functions in the API.
