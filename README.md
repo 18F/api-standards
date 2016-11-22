@@ -63,6 +63,19 @@ Some examples of these principles in action:
 * [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
+### Use API Versioning
+
+Even the best designed API will introduce a breaking change with an update.  When that happens, you'll want a way to differentiate between the two different versions of an endpoint.  Three popular strategies for versioning include:
+
+1. Requiring the Version in the `Accepts:` header. [Heroku recommends this](https://geemus.gitbooks.io/http-api-design/content/en/foundations/require-versioning-in-the-accepts-header.html)
+1. Adding a distinct `Version:` header to each request and response
+1. Explicitly using the URI to specify the API version https://servername/api/v1/endpoint_name
+
+*Note*: Stripe uses a combination of a stable URL version as well as a dedicated header. [Stripe's API Versioning Guidelines](https://stripe.com/docs/api#versioning)
+
+Give this some thought and document why and how you use whichever strategy you choose.  The industry hasn't yet agreed on which strategy is the least wrong, but you should still make sure to be informed and choose explicitly.
+
+
 ### Just use JSON
 
 [JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
@@ -214,4 +227,3 @@ the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/pub
 All contributions to this project will be released under the CC0
 dedication. By submitting a pull request, you are agreeing to comply
 with this waiver of copyright interest.
-
