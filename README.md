@@ -1,8 +1,6 @@
-# 18F API Standards
+# GSA API Standards
 
-**[18F](https://18f.gsa.gov/)** is a technology team inside the US federal government. 18F is very API-focused: our first project was an [API for business opportunities](https://fbopen.gsa.gov/).
-
-This document captures **18F's view of API best practices and standards**. We aim to incorporate as many of them as possible into our work.
+This document captures **Recommended API best practices and standards for GSA**. These are forked from the 18F API Standards. In addition to the recommendations in the original 18F Standards, these include recommendations that are specific to GSA.
 
 APIs, like other web applications, vary greatly in implementation and design, depending on the situation and the problem the application is solving.
 
