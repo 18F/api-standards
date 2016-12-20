@@ -1,4 +1,4 @@
-## Welcome!
+## Contributing to GSA API Standards
 
 These API Standards are intended to begin the discussion within GSA for API best practices. We invite all GSA developers to contribute to these standards and keep the conversation going.
 We encourage you to read this project's CONTRIBUTING policy (you are here), its [LICENSE](LICENSE.md), and its [README](README.md).
