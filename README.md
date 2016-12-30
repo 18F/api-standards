@@ -33,7 +33,9 @@ The #1 best way to understand and address the weaknesses in an API's design and 
 Whenever feasible, design an API in parallel with an accompanying integration of that API.
 
 ### Developers Are Your End Users
-Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process.
+Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal [API Usability Testing](### Default to REST
+These standards assuming the APIs will be generally "Restful". However, recommendations are also provided for SOAP web services.
+) to understand the developer experience in using your API.
 
 ### Provide Documentation
 The developer's first exposure to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
