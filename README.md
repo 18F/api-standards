@@ -62,6 +62,7 @@ At a minimum, API documentation should provide:
 * A description of the error codes that are returned, and their meaning.
 
 Additional nice-to-haves include:
+* Explanation of key management and a sample key.
 * Description of update frequency.
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
