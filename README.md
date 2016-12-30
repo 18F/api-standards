@@ -37,7 +37,7 @@ A few methods to accomplish this include:
 *Creating a web page with a search feature that uses the API.
 *Modifying existing web pages or web applications to use the API instead of direct access to the database.
 
-### Developers Are Your End Users
+## Developers Are Your End Users
 Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal [API Usability Testing](### Default to REST
 These standards assuming the APIs will be generally "Restful". However, recommendations are also provided for SOAP web services.
 ) to understand the developer experience in using your API.
@@ -82,6 +82,8 @@ If an API can no longer be supported, consider decommissioning the API and remov
 ### Avoid Breaking Changes
 
 *TodDo: flesh this out*
+
+## Design considerations
 
 ### API Endpoints
 *Todo: give specific recommendations on URL*
@@ -270,8 +272,6 @@ Several additional API related topics continue to emerge and will be considered 
 That list includes:
 * Microservices
 * Hypermedia and HATEOAS
-
-*ToDo: discussion of microservices*
 
 
 ## Public domain
