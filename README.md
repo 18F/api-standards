@@ -22,7 +22,7 @@ These standards assume the APIs will be generally "RESTful". However, many of th
 
 For APIs that syndicate data, consider several common client use cases:
 
-* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk.
+* **Bulk data.** Clients often wish to establish their own copy of the API's dataset in its entirety. For example, someone might like to build their own search engine on top of the dataset, using different parameters and technology than the "official" API allows. If the API can't easily act as a bulk data provider, provide a separate mechanism for acquiring the backing dataset in bulk, such as [data.gov](https://www.data.gov/).
 * **Staying up to date.** Especially for large datasets, clients may want to keep their dataset up to date without downloading the data set after every change. If this is a use case for the API, prioritize it in the design.
 * **Driving expensive actions.** What would happen if a client wanted to automatically send text messages to thousands of people or light up the side of a skyscraper every time a new record appears? Consider whether the API's records will always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
 
@@ -31,6 +31,11 @@ For APIs that syndicate data, consider several common client use cases:
 The #1 best way to understand and address the weaknesses in an API's design and implementation is to use it in a production system.
 
 Whenever feasible, design an API in parallel with an accompanying integration of that API.
+
+A few methods to accomplish this include:
+*Identifying an internal GSA organization to use your API while also publishing it publicly.
+*Creating a web page with a search feature that uses the API.
+*Modifying existing web pages or web applications to use the API instead of direct access to the database.
 
 ### Developers Are Your End Users
 Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal [API Usability Testing](### Default to REST
@@ -74,6 +79,9 @@ Common ways to do this include a mailing list, or a [dedicated developer blog](h
 
 If an API can no longer be supported, consider decommissioning the API and removing the documentation. If the API will remain available for historical purposes without support, update the documentation to reflect this.
 
+### Avoid Breaking Changes
+
+*TodDo: flesh this out*
 
 ### API Endpoints
 *Todo: give specific recommendations on URL*
