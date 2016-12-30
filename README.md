@@ -48,8 +48,11 @@ Consider developers who will be using your APIs. Their path to using your API wi
 These standards assuming the APIs will be generally "Restful". However, recommendations are also provided for SOAP web services.
 ) to understand the developer experience in using your API.
 
+### Add Your API To The GSA API Directory
+A directory of GSA public APIs is available at [open.gsa.gov/developer](open.gsa.gov/developer/). You can add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open.gsa.gov).
+
 ### Provide Documentation
-The developer's first exposure to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
+The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
 
 At a minimum, API documentation should provide:
 * An overview of the contents of the API and the data sources.
