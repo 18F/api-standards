@@ -33,9 +33,9 @@ The #1 best way to understand and address the weaknesses in an API's design and 
 Whenever feasible, design an API in parallel with an accompanying integration of that API.
 
 A few methods to accomplish this include:
-*Identifying an internal GSA organization to use your API while also publishing it publicly.
-*Creating a web page with a search feature that uses the API.
-*Modifying existing web pages or web applications to use the API instead of direct access to the database.
+* Identifying an internal GSA organization to use your API while also publishing it publicly.
+* Creating a web page with a search feature that uses the API.
+* Modifying existing web pages or web applications to use the API instead of direct access to the database.
 
 ## Developers Are Your End Users
 Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal [API Usability Testing](### Default to REST
