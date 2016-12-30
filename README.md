@@ -33,9 +33,9 @@ The #1 best way to understand and address the weaknesses in an API's design and 
 Whenever feasible, design an API in parallel with an accompanying integration of that API.
 
 ### Developers Are Your End Users
-Consider developers who will be using your APIs, from initial investigation to production usage. Several items provide a better developer experience.
+Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process.
 
-#### Provide Documentation
+### Provide Documentation
 The developer's first exposure to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
 
 At a minimum, API documentation should provide:
@@ -46,20 +46,32 @@ At a minimum, API documentation should provide:
 * A description of the error codes that are returned, and their meaning.
 
 Additional nice-to-haves include:
+* Description of update frequency.
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
 
-#### Point of contact
+### Point of contact
 
 Have an obvious mechanism for clients to report issues and ask questions about the API.
 
 When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+
+### Respond to issues and questions
+
+It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate solution cannot be provided for a query, respond anyway and provide expectations on when it can be addressed.
+
+Avoid the API "ghost town" that occurs when support issues that are posted and never receive a response.
 
 ### Notifications of updates
 
 Have a simple mechanism for clients to follow changes to the API.
 
 Common ways to do this include a mailing list, or a [dedicated developer blog](https://developer.github.com/changes/) with an RSS feed.
+
+### Decommission Unsupported APIs
+
+If an API can no longer be supported, consider decommissioning the API and removing the documentation. If the API will remain available for historical purposes without support, update the documentation to reflect this.
+
 
 ### API Endpoints
 
@@ -87,7 +99,7 @@ Some examples of these principles in action:
 * [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
-### Just use JSON
+### Use JSON
 
 [JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
 
