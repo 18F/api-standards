@@ -68,11 +68,10 @@ Have an obvious mechanism for clients to report issues and ask questions about t
 
 When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
 
-### Respond to issues and questions
+### Avoid an API "Ghost Town" by responding to issues and questions
+Developers can immediately sniff out a stale and unsupported API by old issues never answered and contact emails that no longer work.
 
-It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate solution cannot be provided for a query, respond anyway and provide expectations on when it can be addressed.
-
-Avoid the API "ghost town" that occurs when support issues that are posted and never receive a response.
+It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
 
 ### Notifications of updates
 
