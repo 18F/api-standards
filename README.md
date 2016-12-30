@@ -1,6 +1,6 @@
 # GSA API Standards
 
-This document captures **GSA's recommended best practices and standards**. We encourage GSA development groups to used these standards when developing APIs.
+This document captures **GSA's recommended best practices and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to used these standards when developing APIs.
 
 ## About These Standards
 
