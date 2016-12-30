@@ -15,7 +15,7 @@ This document provides a mix of:
 * **Low level web practices** that most modern HTTP APIs use.
 
 ### Default to REST
-These standards assuming the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
+These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
 
 
 ### Design for common use cases
