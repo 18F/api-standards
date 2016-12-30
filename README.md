@@ -74,6 +74,7 @@ If an API can no longer be supported, consider decommissioning the API and remov
 
 
 ### API Endpoints
+*Todo: give specific recommendations on URL*
 
 An "endpoint" is a combination of two things:
 
@@ -98,6 +99,14 @@ Some examples of these principles in action:
 * [FBOpen API documentation](https://18f.github.io/fbopen/)
 * [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
+
+### Taxonomy terms
+*ToDo: specific recommendations for using GSA taxonomy terms*
+
+
+### Versioning
+
+*Todo: give specific recommendations on the version in URL path*
 
 ### Use JSON
 
@@ -129,6 +138,8 @@ But _if_ keys are used to manage and authenticate API access, the API should all
 This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
 
 Consider whether one of your product goals is to allow a certain level of normal production use of the API without enforcing advanced registration by clients.
+
+*TODO: recommend api.data.gov with GSA specific intructions*
 
 
 ### Error handling
@@ -239,6 +250,18 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 **What about JSONP?**
 
 JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
+
+###SOAP Web Services
+*Todo: best practices for SOAP web services*
+
+##Future Topics
+Several additional API related topics continue to emerge and will be considered for future API standards.
+
+That list includes:
+* Microservices
+* Hypermedia and HATEOAS
+
+*ToDo: discussion of microservices*
 
 
 ## Public domain
