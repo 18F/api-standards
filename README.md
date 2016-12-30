@@ -6,7 +6,7 @@ APIs, like other web applications, vary greatly in implementation and design, de
 
 ### Roadmap not a Roadblock
 
-This document is intended to streamline the process for GSA organizations to publish new APIs. It is not intended to make this process more difficult.
+This document is intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragrmatic advice. It is not intended to make this process more difficult.
 
 
 This document provides a mix of:
