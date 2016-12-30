@@ -2,9 +2,11 @@
 
 This document captures **GSA's recommended best practices and standards**. We encourage GSA development groups to used these standards when developing APIs.
 
+## About These Standards
+
 These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), [API Evangelist](https://apievangelist.com), and [Spencer Schneidenbach](https://medium.com/@schneidenbach/restful-api-best-practices-and-common-pitfalls-7a83ba3763b5#.5acs6a8tj).
 
-### Roadmap not a Roadblock
+### The Standards are a roadmap not a roadblock
 
 This document is intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragrmatic advice. It is not intended to make this process more difficult.
 
@@ -14,9 +16,13 @@ This document provides a mix of:
 * **High level design guidance** that individual APIs interpret to meet their needs.
 * **Low level web practices** that most modern HTTP APIs use.
 
-### Default to REST
+### They default to RESTful
 These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
 
+### They don't look under the covers
+Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application. They focus on the "externals" such as user experience and interfaces.
+
+## Overall Considerations
 
 ### Design for common use cases
 
