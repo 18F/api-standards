@@ -2,7 +2,7 @@
 
 This document captures **GSA's recommended best practices and standards**. We encourage GSA development groups to used these standards when developing APIs.
 
-These standards are forked from the [18F API Standards](https://github.com/18F/api-standards), with influence from several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), [API Evangelist](https://apievangelist.com), and [Spencer Schneidenbach](https://medium.com/@schneidenbach/restful-api-best-practices-and-common-pitfalls-7a83ba3763b5#.5acs6a8tj).
+These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), [API Evangelist](https://apievangelist.com), and [Spencer Schneidenbach](https://medium.com/@schneidenbach/restful-api-best-practices-and-common-pitfalls-7a83ba3763b5#.5acs6a8tj).
 
 ### Roadmap not a Roadblock
 
