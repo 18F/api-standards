@@ -11,11 +11,6 @@ These standards are forked from the [18F API Standards](https://github.com/18F/a
 This document is intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. It is not intended to make this process more difficult.
 
 
-This document provides a mix of:
-
-* **High level design guidance** that individual APIs interpret to meet their needs.
-* **Low level web practices** that most modern HTTP APIs use.
-
 ### They default to RESTful
 These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
 
