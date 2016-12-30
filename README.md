@@ -4,6 +4,11 @@ This document captures **GSA's recommended best practices and standards**. We en
 
 APIs, like other web applications, vary greatly in implementation and design, depending on the situation and the problem the application is solving.
 
+### Roadmap not a Roadblock
+
+This document is intended to streamline the process for GSA organizations to publish new APIs. It is not intended to make this process more difficult.
+
+
 This document provides a mix of:
 
 * **High level design guidance** that individual APIs interpret to meet their needs.
