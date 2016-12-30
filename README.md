@@ -14,6 +14,10 @@ This document provides a mix of:
 * **High level design guidance** that individual APIs interpret to meet their needs.
 * **Low level web practices** that most modern HTTP APIs use.
 
+### Default to REST
+These standards assuming the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
+
+
 ### Design for common use cases
 
 For APIs that syndicate data, consider several common client use cases:
@@ -28,7 +32,24 @@ The #1 best way to understand and address the weaknesses in an API's design and 
 
 Whenever feasible, design an API in parallel with an accompanying integration of that API.
 
-### Point of contact
+### Developers Are Your End Users
+Consider developers who will be using your APIs, from initial investigation to production usage. Several items provide a better developer experience.
+
+#### Provide Documentation
+The developer's first exposure to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
+
+At a minimum, API documentation should provide:
+* An overview of the contents of the API and the data sources.
+* Production URLs for accessing the API.
+* Required parameters and defaults.
+* A description of the data that is returned.
+* A description of the error codes that are returned, and their meaning.
+
+Additional nice-to-haves include:
+* Interactive documentation to demonstrate sample calls.
+* Sample client code for consuming the API in common languages.
+
+#### Point of contact
 
 Have an obvious mechanism for clients to report issues and ask questions about the API.
 
