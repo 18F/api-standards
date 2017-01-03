@@ -1,4 +1,4 @@
-**WORKING DRAFT - These documents are a working draft and are not official GSA Policy**
+<span style="color:red"> **WORKING DRAFT - These documents are a working draft and are not official GSA Policy** </span>
 
 # GSA API Standards - DRAFT
 
