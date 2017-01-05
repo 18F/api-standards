@@ -1,6 +1,24 @@
 ## Contributing to GSA API Standards
 
 These API Standards are intended to begin the discussion within GSA for API best practices. We invite all GSA developers to contribute to these standards and keep the conversation going.
+
+### For the opening round of review (Jan 2017), we request that you:
+1. Read the proposed GSA API standards in the "converting-gsa-standards" branch.
+2. View the "round one changes" pull request and see teh "files changed" tab to see how it has modified the 18F standards, from which it was forked.
+3. Click the plus symbol beside any comments you would like to comment on, and add comments directly.
+4. When you have completed your review, select "Review changes" and submit your review with any general comments you would like to share.
+
+### During the review process, GSA Digital Services will:
+- Respond to the comments.
+- Immediately make some changes and commit to the "converting-gsa-standards" branch.
+
+### At some point when initial feedback has been completed, GSA Digital Services will:
+- Merge the pull request into the "master" branch...voila, we have GSA API standards.
+
+(After this first round, this CONTRIBUTING policy will be updated to reflect the process for maintaining these going forward.)
+
+
+
 We encourage you to read this project's CONTRIBUTING policy (you are here), its [LICENSE](LICENSE.md), and its [README](README.md).
 
 If you have any questions or want to read more, contact the GSA Digital Services group.
