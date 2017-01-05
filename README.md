@@ -124,6 +124,8 @@ If the API is intended to share data across the GSA enteprise or beyond, conside
 ### Versioning
 The recommended method of versioning APIs is to include a version number in the URL path. For example "/v1". 
 
+You can see an example of this in practice in the [SAM API](http://gsa.github.io/sam_api/sam/index.html).
+
 ### Use JSON
 
 [JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
