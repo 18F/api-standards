@@ -9,7 +9,7 @@ These API Standards are intended to begin the discussion within GSA for API best
 4. When you have completed your review, select "Review changes" and submit your review with any general comments you would like to share.
 
 ## Alternate path: Github Issues:
-If you are not familiar with the process of commenting on a pull request explained above, feel free to add issues directly in the github repo.
+If you are not familiar with the process of commenting on a pull request explained above, feel free to [add issues](https://github.com/GSA/api-standards/issues) directly in the github repo.
 
 
 ### During the review process, GSA Digital Services will:
