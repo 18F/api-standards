@@ -118,9 +118,8 @@ Some examples of these principles in action:
 * [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
-### Taxonomy terms
-*ToDo: specific recommendations for using GSA taxonomy terms*
-
+### Taxonomy 
+If the API is intended to share data across the GSA enteprise or beyond, consider referencing the GSA Taxonomy. Contact GSA's Chief Data Officer for more information.
 
 ### Versioning
 
