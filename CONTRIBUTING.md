@@ -3,7 +3,7 @@
 These API Standards are intended to begin the discussion within GSA for API best practices. We invite all GSA developers to contribute to these standards and keep the conversation going.
 
 ### For the opening round of review (Jan 2017), we request that you:
-1. Read the proposed GSA API standards in the [https://github.com/GSA/api-standards/tree/converting-gsa-standards]("converting-gsa-standards") branch.
+1. Read the proposed GSA API standards in the [converting-gsa-standards](https://github.com/GSA/api-standards/tree/converting-gsa-standards) branch.
 2. View the "round one changes" pull request and see teh "files changed" tab to see how it has modified the 18F standards, from which it was forked.
 3. Click the plus symbol beside any comments you would like to comment on, and add comments directly.
 4. When you have completed your review, select "Review changes" and submit your review with any general comments you would like to share.
