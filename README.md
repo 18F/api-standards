@@ -1,6 +1,6 @@
 <span style="color:red"> **WORKING DRAFT - These documents are a working draft and are not official GSA Policy** </span>
 
-# GSA API Standards - DRAFT
+# GSA API Standards
 
 This document captures **GSA's recommended best practices and standards**. We encourage GSA development groups to used these standards when developing APIs.
 
