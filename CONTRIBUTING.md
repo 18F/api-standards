@@ -1,6 +1,6 @@
 ## Contributing to GSA API Standards
 
-These API Standards are intended to begin the discussion within GSA for API best practices. We invite all GSA developers to contribute to these standards and keep the conversation going.
+These API Standards are intended to begin the discussion within GSA for API best practices. We invite all GSA stakeholders to contribute to these standards and keep the conversation going.
 
 ### For the opening round of review (Jan 2017), we request that you:
 1. Read the [proposed GSA API standards in the "converting-gsa-standards" branch](https://github.com/GSA/api-standards/blob/converting-gsa-standards/README.md).
