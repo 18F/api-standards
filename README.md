@@ -122,7 +122,7 @@ Some examples of these principles in action:
 If the API is intended to share data across the GSA enteprise or beyond, consider referencing the GSA Taxonomy. Contact GSA's Chief Data Officer for more information.
 
 ### Versioning
-The recommended method of versioning APIs is to include a version number in the URL path. For example "/v1". 
+The recommended method of versioning APIs is to include a version number in the URL path. For example "/v1/". 
 
 You can see an example of this in practice in the [SAM API](http://gsa.github.io/sam_api/sam/versioning.html).
 
