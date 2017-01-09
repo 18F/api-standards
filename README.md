@@ -149,16 +149,14 @@ This date format is used all over the web, and puts each field in consistent ord
 
 ### API Keys
 
-These standards do not take a position on whether or not to use API keys.
+We recommend using [api.data.gov](https://api.data.gov/about/) as a layer between your API and users. This API Management service provides:
+* API key management
+* rate limiting (throttling)
+* gathering usage statistics (analaytics)
 
-But _if_ keys are used to manage and authenticate API access, the API should allow some sort of unauthenticated access, without keys.
+Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys. (And example of this is the [FBOpen API](https://pages.18f.gov/fbopen/apidocs/).)
 
 This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
-
-Consider whether one of your product goals is to allow a certain level of normal production use of the API without enforcing advanced registration by clients.
-
-*TODO: recommend api.data.gov with GSA specific intructions*
-
 
 ### Error handling
 
