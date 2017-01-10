@@ -4,6 +4,15 @@
 
 This document captures **GSA's recommended best practices and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to used these standards when developing APIs.
 
+# Index
+[About These Standards](#about-these-standards)
+[Overall Considerations](#overall-considerations)
+[Developers Are Your End Users](#developers-are-your-end-users)
+[Design Considerations](#design-considerations)
+[Future Topics](#future-topics)
+[Public Domain](#public-domain)
+
+
 ## About These Standards
 
 These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), [API Evangelist](https://apievangelist.com), and [Spencer Schneidenbach](https://medium.com/@schneidenbach/restful-api-best-practices-and-common-pitfalls-7a83ba3763b5#.5acs6a8tj).
@@ -18,9 +27,6 @@ These standards assume the APIs will be generally "RESTful". However, many of th
 
 ### They don't look under the covers
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They focus on the "externals" such as user experience and interfaces.
-
-# Index
-[Overall Considerations](#overall-considerations)
 
 ## Overall Considerations
 
@@ -73,7 +79,7 @@ Have an obvious mechanism for clients to report issues and ask questions about t
 
 When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
 
-### Avoid an API "Ghost Town" by responding to issues and questions
+### Avoid an API "Ghost Town": responding to issues and questions
 Developers can immediately sniff out a stale and unsupported API by old issues never answered and contact emails that no longer work.
 
 It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
@@ -92,7 +98,7 @@ If an API can no longer be supported, consider decommissioning the API and remov
 
 *TodDo: flesh this out*
 
-## Design considerations
+## Design Considerations
 
 ### API Endpoints
 *Todo: give specific recommendations on URL*
@@ -270,10 +276,10 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 
 JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
 
-###SOAP Web Services
+### SOAP Web Services
 *Todo: best practices for SOAP web services*
 
-##Future Topics
+## Future Topics
 Several additional API related topics continue to emerge and will be considered for future API standards.
 
 That list includes:
