@@ -19,6 +19,9 @@ These standards assume the APIs will be generally "RESTful". However, many of th
 ### They don't look under the covers
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They focus on the "externals" such as user experience and interfaces.
 
+# Index
+[Overall Considerations](#overall-considerations)
+
 ## Overall Considerations
 
 ### Design for common use cases
@@ -276,6 +279,7 @@ Several additional API related topics continue to emerge and will be considered 
 That list includes:
 * Microservices
 * Hypermedia and HATEOAS
+* API modeling and tooling (Swagger, RAML, API Blueprint)
 
 
 ## Public domain
