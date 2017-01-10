@@ -5,11 +5,11 @@
 This document captures **GSA's recommended best practices and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to used these standards when developing APIs.
 
 # Index
-[About These Standards](#about-these-standards)
-[Overall Considerations](#overall-considerations)
-[Developers Are Your End Users](#developers-are-your-end-users)
-[Design Considerations](#design-considerations)
-[Future Topics](#future-topics)
+[About These Standards](#about-these-standards)  
+[Overall Considerations](#overall-considerations)  
+[Developers Are Your End Users](#developers-are-your-end-users)  
+[Design Considerations](#design-considerations)  
+[Future Topics](#future-topics)  
 [Public Domain](#public-domain)
 
 
