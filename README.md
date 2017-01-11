@@ -77,7 +77,9 @@ Additional nice-to-haves include:
 
 Have an obvious mechanism for clients to report issues and ask questions about the API.
 
-When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+When using GitHub for an API's code or documentation, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+
+If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team watches for issues there.
 
 ### Avoid an API "Ghost Town": responding to issues and questions
 Developers can immediately sniff out a stale and unsupported API by old issues never answered and contact emails that no longer work.
