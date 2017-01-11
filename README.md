@@ -293,9 +293,7 @@ JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE
 
 ### SOAP Web Services
 * Provide a WSDL. 
-Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at:
-
-{URL Path)?wsdl
+Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at: {URL Path)?wsdl
 
 * Provide documentation
 Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
