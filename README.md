@@ -108,6 +108,19 @@ An "endpoint" is a combination of two things:
 * The verb (e.g. `GET` or `POST`)
 * The URL path (e.g. `/articles`)
 
+The URL path should follow this pattern if possible for a collection of items:
+(path)/{business_function}/{application_name}/{version}/{plural_noun}
+
+An example would be:
+https://api.data.gov/financial_management/sample_app/v1/vendors
+
+The URL path for an individual item in this collection would default to:
+(path)/{business_function}/{application_name}/{version}/{plural_noun}/{identifier}
+
+An example would be:
+https://api.data.gov/financial_management/sample_app/v1/vendors/123
+
+
 Information can be passed to an endpoint in either of two ways:
 
 * The URL query string (e.g. `?year=2014`)
