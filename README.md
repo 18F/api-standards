@@ -26,7 +26,7 @@ This document is intended to streamline the process for GSA organizations to pub
 These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for [SOAP web services](#soap-web-services).
 
 ### They don't look under the covers
-Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They focus on the "externals" such as user experience and interfaces.
+Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They gnerally focus on the "externals" that will be exposed to users.
 
 ## Overall Considerations
 
