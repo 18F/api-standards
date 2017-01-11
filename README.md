@@ -19,7 +19,7 @@ These standards are forked from the [18F API Standards](https://github.com/18F/a
 
 ### The Standards are a roadmap not a roadblock
 
-This document is intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. It is not intended to make this process more difficult.
+These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. They are not intended to make this process more difficult.
 
 
 ### They default to RESTful
