@@ -299,7 +299,7 @@ Most platforms will provide this by default out of the box. Leave it active unle
 Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
 
 ## Future Topics
-Several additional API related topics continue to emerge and will be considered for future API standards.
+Several additional API related topics continue to emerge and will be considered for future updates to these standards.
 
 That list includes:
 * Microservices
