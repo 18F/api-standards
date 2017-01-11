@@ -98,7 +98,7 @@ If an API can no longer be supported, consider decommissioning the API and remov
 
 ### Avoid Breaking Changes
 
-*TodDo: flesh this out*
+Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new version at a separate URL path. Leave at least one previous version intact. And communicate to existing users to understand when previous versions will be decommissioned.
 
 ## Design Considerations
 
