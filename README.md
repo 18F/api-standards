@@ -23,7 +23,7 @@ This document is intended to streamline the process for GSA organizations to pub
 
 
 ### They default to RESTful
-These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
+These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for [SOAP web services](#soap-web-services).
 
 ### They don't look under the covers
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They focus on the "externals" such as user experience and interfaces.
@@ -101,8 +101,6 @@ If an API can no longer be supported, consider decommissioning the API and remov
 ## Design Considerations
 
 ### API Endpoints
-*Todo: give specific recommendations on URL*
-
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` or `POST`)
@@ -290,7 +288,13 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
 
 ### SOAP Web Services
-*Todo: best practices for SOAP web services*
+* Provide a WSDL. 
+Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at:
+
+{URL Path)?wsdl
+
+* Provide documentation
+Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
 
 ## Future Topics
 Several additional API related topics continue to emerge and will be considered for future API standards.
