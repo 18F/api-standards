@@ -17,21 +17,21 @@ This document captures **GSA's recommended best practices, conventions, and stan
 
 These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), and several from the private sector.
 
-### The Standards are a roadmap not a roadblock
+### The standards are a roadmap not a roadblock
 
 These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. We believe these standards will benefit GSA API development and provide consistency. Projects can benefit if they start considering these in their design even if they do not implement them all.
 
 
-### They Primary Focus On RESTful APIs
+### They primarily focus on RESTful APIs
 Most of the content in these standards address items related to "RESTful" APIs. However, many of the standards are equally appropriate for other types of web service. 
 
-A ew specific recommendations are provided for [SOAP web services](#soap-web-services), and we encourage the GSA community to share more recommendations.
+A few specific recommendations are provided for [SOAP web services](#soap-web-services), and we encourage the GSA community to share more recommendations.
 
 ### They don't look under the covers
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They generally focus on the "externals" that will be exposed to users.
 
-### For internal and external APIs
-These standards will be useful for both internal and external APIs. For specific considerations about documenting internal APIs, see [Provide Documentation](#provide-documentation).
+### For public and non-public APIs
+These standards will be useful for both public and non-public APIs. For specific considerations about documenting non-public APIs, see [Provide Documentation](#provide-documentation).
 
 ## Overall Considerations
 
@@ -57,15 +57,15 @@ A few methods to accomplish this include:
 ## Developers Are Your End Users
 Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal API Usability Testing to understand the developer experience in using your API. More information about this type of testing is available here: [API Usability Testing](https://pages.18f.gov/API-Usability-Testing/).
 
-### Add Your API To The GSA API Directory
-A directory of GSA public APIs is available at [open.gsa.gov/developer](http://open.gsa.gov/developer/). You can add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open.gsa.gov).
+### Add your API to the GSA API Directory
+A directory of GSA public APIs is available at [open.gsa.gov/developer](http://open.gsa.gov/developer/). You can add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open.gsa.gov). Internal APIs can be posted to this directory, with a note that they are internal.
 
-### Provide Documentation
+### Provide documentation
 The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
 
 At a minimum, API documentation should provide:
 * An overview of the contents of the API and the data sources.
-* Production URLs for accessing the API. (For public APIs only -- non-public APIs would exclude this.)
+* Public APIs should provide production URLs for accessing the API. (Non-public APIs would exclude this.)
 * Required parameters and defaults.
 * A description of the data that is returned.
 * A description of the error codes that are returned, and their meaning.
@@ -76,9 +76,9 @@ Additional nice-to-haves include:
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
 
-Special considerations for internal APIs:
-* The API can be published on the GSA API Directory, but clearly state it is internal.
-* Documentation should not expose any sensitive details that would expose the API.
+Special considerations for non-public APIs:
+* The API can be published on the GSA API Directory, but clearly state it is non-public.
+* Documentation should not include any sensitive details that would expose the API.
 * URLs and endpoints should be removed from the documentation.
 
 ### Point of contact
@@ -100,17 +100,17 @@ Have a simple mechanism for clients to follow changes to the API.
 
 Common ways to do this include a mailing list, or a [dedicated developer blog](https://developer.github.com/changes/) with an RSS feed.
 
-### Decommission Unsupported APIs
+### Decommission unsupported APIs
 
 If an API can no longer be supported, consider decommissioning the API and removing the documentation. If the API will remain available for historical purposes without support, update the documentation to reflect this.
 
-### Avoid Breaking Changes
+### Avoid breaking changes
 
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new version at a separate URL path. Leave at least one previous version intact. And communicate to existing users to understand when previous versions will be decommissioned.
 
 ## Design Considerations
 
-### API Endpoints
+### API endpoints
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
@@ -176,7 +176,7 @@ For just dates, that looks like `2013-02-27`. For full times, that's of the form
 This date format is used all over the web, and puts each field in consistent order -- from least granular to most granular.
 
 
-### API Keys
+### API keys
 
 We recommend using [api.data.gov](https://api.data.gov/about/) as a layer between your API and users. This API Management service provides:
 * API key management
@@ -207,7 +207,7 @@ HTTP responses with error details should use a `4XX` status code to indicate a c
 
 If pagination is required to navigate datasets, use the method that makes the most sense for the API's data.
 
-#### Parameters
+### Parameters
 
 Common patterns:
 
@@ -215,7 +215,7 @@ Common patterns:
 * `offset` and `limit`. This standard comes from the SQL database world, and is a good option when you need stable permalinks to result sets.
 * `since` and `limit`. Get everything "since" some ID or timestamp. Useful when it's a priority to let clients efficiently stay "in sync" with data. Generally requires result set order to be very stable.
 
-#### Metadata
+### Metadata
 
 Include enough metadata so that clients can calculate how much data there is, and how and whether to fetch the next set of results.
 
@@ -247,7 +247,7 @@ For an existing API that runs over plain HTTP, the first step is to add HTTPS su
 
 Then, evaluate the viability of disabling or redirecting plain HTTP requests. See [GSA/api.data.gov#34](https://github.com/18F/api.data.gov/issues/34) for a discussion of some of the issues involved with transitioning from HTTP->HTTPS.
 
-#### Server Name Indication
+### Server Name Indication
 
 If you can, use [Server Name Indication](https://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
 
@@ -278,7 +278,7 @@ An API that returns JSON should use:
 Content-Type: application/json; charset=utf-8
 ```
 
-### CORS
+### Enable CORS
 
 For clients to be able to use an API from inside web browsers, the API must [enable CORS](http://enable-cors.org).
 
