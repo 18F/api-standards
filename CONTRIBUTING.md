@@ -1,12 +1,19 @@
-## Welcome!
+## Contributing to GSA API Standards
 
-We're so glad you're thinking about contributing to an 18F open source project! If you're unsure about anything, just ask -- or submit the issue or pull request anyway. The worst that can happen is you'll be politely asked to change something. We love all friendly contributions.
+These API Standards are intended to begin the discussion within GSA for API best practices. We invite all GSA stakeholders to contribute to these standards and keep the conversation going.
 
-We want to ensure a welcoming environment for all of our projects. Our staff follow the [18F Code of Conduct](https://github.com/18F/code-of-conduct/blob/master/code-of-conduct.md) and all contributors should do the same.
+## Ways to contribute:
+
+
+### If you have a github account:
+Review the readme.md, and [add issues](https://github.com/GSA/api-standards/issues) directly in the github repo.
+
+### If you don't have a github account:
+Review the readme.md, and send comments to ryan.day@gsa.gov.
 
 We encourage you to read this project's CONTRIBUTING policy (you are here), its [LICENSE](LICENSE.md), and its [README](README.md).
 
-If you have any questions or want to read more, check out the [18F Open Source Policy GitHub repository]( https://github.com/18f/open-source-policy), or just [shoot us an email](mailto:18f@gsa.gov).
+If you have any questions or want to read more, contact the GSA Digital Services group.
 
 ## Public domain
 
