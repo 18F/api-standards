@@ -1,8 +1,8 @@
-<span style="color:red"> **WORKING DRAFT - These documents are a working draft and are not official GSA Policy** </span>
+<span style="color:red"> **WORKING DRAFT** </span>
 
 # GSA API Standards
 
-This document captures **GSA's recommended best practices and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
+This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
 
 # Index
 [About These Standards](#about-these-standards)  
@@ -19,14 +19,19 @@ These standards are forked from the [18F API Standards](https://github.com/18F/a
 
 ### The Standards are a roadmap not a roadblock
 
-These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. They are not intended to make this process more difficult.
+These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. We believe these standards will benefit GSA API development and provide consistency. Projects can benefit if they start considering these in their design even if they do not implement them all.
 
 
-### They default to RESTful
-These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for [SOAP web services](#soap-web-services).
+### They Primary Focus On RESTful APIs
+Most of the content in these standards address items related to "RESTful" APIs. However, many of the standards are equally appropriate for other types of web service. 
+
+A ew specific recommendations are provided for [SOAP web services](#soap-web-services), and we encourage the GSA community to share more recommendations.
 
 ### They don't look under the covers
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They generally focus on the "externals" that will be exposed to users.
+
+### For internal and external APIs
+These standards will be useful for both internal and external APIs. For specific considerations about documenting internal APIs, see [Provide Documentation](#provide-documentation).
 
 ## Overall Considerations
 
@@ -50,19 +55,17 @@ A few methods to accomplish this include:
 * Modifying existing web pages or web applications to use the API instead of direct access to the database.
 
 ## Developers Are Your End Users
-Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal [API Usability Testing](### Default to REST
-These standards assuming the APIs will be generally "Restful". However, recommendations are also provided for SOAP web services.
-) to understand the developer experience in using your API.
+Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal API Usability Testing to understand the developer experience in using your API. More information about this type of testing is available here: [API Usability Testing](https://pages.18f.gov/API-Usability-Testing/).
 
 ### Add Your API To The GSA API Directory
-A directory of GSA public APIs is available at [open.gsa.gov/developer](open.gsa.gov/developer/). You can add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open.gsa.gov).
+A directory of GSA public APIs is available at [open.gsa.gov/developer](http://open.gsa.gov/developer/). You can add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open.gsa.gov).
 
 ### Provide Documentation
 The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API.
 
 At a minimum, API documentation should provide:
 * An overview of the contents of the API and the data sources.
-* Production URLs for accessing the API.
+* Production URLs for accessing the API. (For public APIs only -- non-public APIs would exclude this.)
 * Required parameters and defaults.
 * A description of the data that is returned.
 * A description of the error codes that are returned, and their meaning.
@@ -72,6 +75,11 @@ Additional nice-to-haves include:
 * Description of update frequency.
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
+
+Special considerations for internal APIs:
+* The API can be published on the GSA API Directory, but clearly state it is internal.
+* Documentation should not expose any sensitive details that would expose the API.
+* URLs and endpoints should be removed from the documentation.
 
 ### Point of contact
 
@@ -105,28 +113,26 @@ Any changes made to a specific version of your API should not break your contrac
 ### API Endpoints
 An "endpoint" is a combination of two things:
 
-* The verb (e.g. `GET` or `POST`)
+* The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
 * The URL path (e.g. `/articles`)
 
 The URL path should follow this pattern if possible for a collection of items:
 (path)/{business_function}/{application_name}/{version}/{plural_noun}
 
 An example would be:
-https://api.data.gov/financial_management/sample_app/v1/vendors
+(path)/financial_management/sample_app/v1/vendors
 
 The URL path for an individual item in this collection would default to:
 (path)/{business_function}/{application_name}/{version}/{plural_noun}/{identifier}
 
 An example would be:
-https://api.data.gov/financial_management/sample_app/v1/vendors/123
+path/financial_management/sample_app/v1/vendors/123
 
 
 Information can be passed to an endpoint in either of two ways:
 
 * The URL query string (e.g. `?year=2014`)
 * HTTP headers (e.g. `X-Api-Key: my-key`)
-
-When people say "RESTful" nowadays, they really mean designing simple, intuitive endpoints that represent unique functions in the API.
 
 Generally speaking:
 
@@ -136,8 +142,7 @@ Generally speaking:
 
 Some examples of these principles in action:
 
-* [FBOpen API documentation](https://18f.github.io/fbopen/)
-* [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
+* [SAM API](http://gsa.github.io/sam_api/sam/)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
 ### Taxonomy 
@@ -176,9 +181,9 @@ This date format is used all over the web, and puts each field in consistent ord
 We recommend using [api.data.gov](https://api.data.gov/about/) as a layer between your API and users. This API Management service provides:
 * API key management
 * rate limiting (throttling)
-* gathering usage statistics (analaytics)
+* gathering usage statistics (analytics)
 
-Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys. (And example of this is the [FBOpen API](https://pages.18f.gov/fbopen/apidocs/).)
+Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys. 
 
 This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
 
@@ -191,7 +196,7 @@ For example, a JSON API might provide the following when an uncaught exception o
 ```json
 {
   "message": "Description of the error.",
-  "exception": "[detailed stacktrace]"
+  "exception": "Description of the error"
 }
 ```
 
@@ -291,11 +296,11 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 
 JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
 
-### SOAP Web Services
+## SOAP Web Services
 * Provide a WSDL. 
 Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at: {URL Path)?wsdl
 
-* Provide documentation
+* Provide documentation for SOAP web services
 Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
 
 ## Future Topics
@@ -305,6 +310,7 @@ That list includes:
 * Microservices
 * Hypermedia and HATEOAS
 * API modeling and tooling (Swagger, RAML, API Blueprint)
+* Responsive APIs
 
 ### What are we missing? 
 If you see a future topic we need to consider, take a look at our [contributing page](https://github.com/GSA/api-standards/blob/master/CONTRIBUTING.md) for instructions to share that info.
