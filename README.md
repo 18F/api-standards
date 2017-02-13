@@ -2,7 +2,7 @@
 
 # GSA API Standards
 
-This document captures **GSA's recommended best practices and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to used these standards when developing APIs.
+This document captures **GSA's recommended best practices and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
 
 # Index
 [About These Standards](#about-these-standards)  
@@ -15,18 +15,18 @@ This document captures **GSA's recommended best practices and standards for Appl
 
 ## About These Standards
 
-These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), [API Evangelist](https://apievangelist.com), and [Spencer Schneidenbach](https://medium.com/@schneidenbach/restful-api-best-practices-and-common-pitfalls-7a83ba3763b5#.5acs6a8tj).
+These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), and several from the private sector.
 
 ### The Standards are a roadmap not a roadblock
 
-This document is intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. It is not intended to make this process more difficult.
+These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. They are not intended to make this process more difficult.
 
 
 ### They default to RESTful
-These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for SOAP web services.
+These standards assume the APIs will be generally "RESTful". However, many of the standards are equally appropriate for other types of web service. Specific recommendations are provided for [SOAP web services](#soap-web-services).
 
 ### They don't look under the covers
-Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They focus on the "externals" such as user experience and interfaces.
+Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They generally focus on the "externals" that will be exposed to users.
 
 ## Overall Considerations
 
@@ -77,7 +77,9 @@ Additional nice-to-haves include:
 
 Have an obvious mechanism for clients to report issues and ask questions about the API.
 
-When using GitHub for an API's code, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+When using GitHub for an API's code or documentation, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+
+If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team watches for issues there.
 
 ### Avoid an API "Ghost Town": responding to issues and questions
 Developers can immediately sniff out a stale and unsupported API by old issues never answered and contact emails that no longer work.
@@ -96,17 +98,28 @@ If an API can no longer be supported, consider decommissioning the API and remov
 
 ### Avoid Breaking Changes
 
-*TodDo: flesh this out*
+Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new version at a separate URL path. Leave at least one previous version intact. And communicate to existing users to understand when previous versions will be decommissioned.
 
 ## Design Considerations
 
 ### API Endpoints
-*Todo: give specific recommendations on URL*
-
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` or `POST`)
 * The URL path (e.g. `/articles`)
+
+The URL path should follow this pattern if possible for a collection of items:
+(path)/{business_function}/{application_name}/{version}/{plural_noun}
+
+An example would be:
+https://api.data.gov/financial_management/sample_app/v1/vendors
+
+The URL path for an individual item in this collection would default to:
+(path)/{business_function}/{application_name}/{version}/{plural_noun}/{identifier}
+
+An example would be:
+https://api.data.gov/financial_management/sample_app/v1/vendors/123
+
 
 Information can be passed to an endpoint in either of two ways:
 
@@ -132,6 +145,8 @@ If the API is intended to share data across the GSA enteprise or beyond, conside
 
 ### Versioning
 The recommended method of versioning APIs is to include a version number in the URL path. For example "/v1/". 
+
+Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
 
 You can see an example of this in practice in the [SAM API](http://gsa.github.io/sam_api/sam/versioning.html).
 
@@ -277,15 +292,22 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE8 or IE9 must be supported, use Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to help with this.
 
 ### SOAP Web Services
-*Todo: best practices for SOAP web services*
+* Provide a WSDL. 
+Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at: {URL Path)?wsdl
+
+* Provide documentation
+Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
 
 ## Future Topics
-Several additional API related topics continue to emerge and will be considered for future API standards.
+Several additional API related topics continue to emerge and will be considered for future updates to these standards.
 
 That list includes:
 * Microservices
 * Hypermedia and HATEOAS
 * API modeling and tooling (Swagger, RAML, API Blueprint)
+
+### What are we missing? 
+If you see a future topic we need to consider, take a look at our [contributing page](https://github.com/GSA/api-standards/blob/master/CONTRIBUTING.md) for instructions to share that info.
 
 
 ## Public domain
