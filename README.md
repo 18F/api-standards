@@ -23,7 +23,7 @@ These standards are intended to streamline the process for GSA organizations to 
 
 
 ### They primarily focus on RESTful APIs
-Most of the content in these standards address items related to "RESTful" APIs. However, many of the standards are equally appropriate for other types of web service. 
+Most of the content in these standards relates to "RESTful" APIs. However, many of the standards are equally appropriate for other types of web service. 
 
 A few specific recommendations are provided for [SOAP web services](#soap-web-services), and we encourage the GSA community to share more recommendations.
 
