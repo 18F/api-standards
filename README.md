@@ -55,7 +55,7 @@ A few methods to accomplish this include:
 * Modifying existing web pages or web applications to use the API instead of direct access to the database.
 
 ## Developers Are Your End Users
-Consider developers who will be using your APIs. Their path to using your API will include discovery and inital investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal API Usability Testing to understand the developer experience in using your API. More information about this type of testing is available here: [API Usability Testing](https://pages.18f.gov/API-Usability-Testing/).
+Consider developers who will be using your APIs. Their path to using your API will include discovery and initial investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal API Usability Testing to understand the developer experience in using your API. More information about this type of testing is available here: [API Usability Testing](https://pages.18f.gov/API-Usability-Testing/).
 
 ### Add your API to the GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/developer](http://open.gsa.gov/developer/). You can add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open.gsa.gov). Internal APIs can be posted to this directory, with a note that they are internal.
