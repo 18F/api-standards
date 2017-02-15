@@ -9,7 +9,7 @@ We have set up `https://api.gsa.gov/` as an umbrella domain for GSA's APIs.  Usi
 
 ## Overall Proposal
 
-Use this page (or create others in this folder) to propose and deliberate on how to use the `https://api.gsa.gov/` base URL to unify the agency APIs 
+Use this page (or create others in this folder) to propose and deliberate on how to use the `https://api.gsa.gov/` base URL to unify the agency APIs.  
 
 #### Benefits
 
@@ -43,7 +43,7 @@ _This is a partial view meant to outline a proposed structure.  Remember, we can
 
 ##### Proposed next steps 
 
-1. Merge the PR that creates this page.  
+1. [Merge the PR](https://github.com/GSA/api-standards/pull/21) that creates this page.  
 2. Circulate it and more context to the agency API working group.  
 3. Gain consensus on the idea.  
 4. Have a team (perhaps team CTO) agree to chair the effort.  
