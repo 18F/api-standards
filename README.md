@@ -15,7 +15,7 @@ This document captures **GSA's recommended best practices, conventions, and stan
 
 ## About These Standards
 
-These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards), and several from the private sector.
+These standards are forked from the [18F API Standards](https://github.com/18F/api-standards). They are also influenced by several other sources, including the [White House API Standards](https://github.com/WhiteHouse/api-standards) and best practices from the private sector.
 
 ### The standards are a roadmap not a roadblock
 
