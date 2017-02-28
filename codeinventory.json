@@ -1,0 +1,14 @@
+﻿{
+  "name": "api-standards",
+  "description": "API Standards for GSA",
+  "license": "https://github.com/GSA/api-standards/blob/master/LICENSE.md",
+  "openSourceProject": 1,
+  "governmentWideReuseProject": 1,
+  "tags": [
+    "api",
+    "gsa-api"
+  ],
+  "contact": {
+    "email": "cto@gsa.gov"
+  }
+}
