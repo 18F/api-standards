@@ -5,7 +5,7 @@ These API Standards are intended to begin the discussion within GSA for API best
 ## Ways to contribute:
 
 ### If have a github account:
-Review the readme.md, and [add issues](https://github.com/GSA/api-standards/issues) directly in the github repo.
+Review the readme.md, and [add issues](https://github.com/GSA/api-standards/issues) or pull requests directly in this github repo.
 
 ### If you don't have a github account:
 Review the readme.md, and send comments to ryan.day@gsa.gov.
