@@ -1,5 +1,3 @@
-<span style="color:red"> **WORKING DRAFT** </span>
-
 # GSA API Standards
 
 This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
@@ -298,10 +296,12 @@ JSONP is [not secure or performant](https://gist.github.com/tmcw/6244497). If IE
 
 ## SOAP Web Services
 * Provide a WSDL. 
-Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at: {URL Path)?wsdl
 
-* Provide documentation for SOAP web services
-Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
+  Most platforms will provide this by default out of the box. Leave it active unless you have a strong reason not to. A useful convention is that the WSDL will be available at: {URL Path)?wsdl
+
+* Provide documentation for SOAP web services.
+
+  Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
 
 ## Future Topics
 Several additional API related topics continue to emerge and will be considered for future updates to these standards.
