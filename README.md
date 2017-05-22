@@ -1,4 +1,6 @@
-<span style="color:red"> **DRAFT** </span>
+<span style="color:red"> **BETA** </span>
+
+(Note: These standards are prescriptive and a work-in-progress.  Comments are welcome!)
 
 # GSA API Standards
 
