@@ -1,6 +1,6 @@
 <span style="color:red"> **BETA** </span>
 
-(Note: These standards are prescriptive and a work-in-progress.  Comments are welcome!)
+(Note: These standards are prescriptive and a work-in-progress.  [Comments](https://github.com/GSA/api-standards/issues) are welcome!)
 
 # GSA API Standards
 
