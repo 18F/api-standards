@@ -315,6 +315,7 @@ That list includes:
 * Hypermedia and HATEOAS
 * API modeling and tooling (Swagger, RAML, API Blueprint)
 * Responsive APIs
+* GraphQL
 
 ### What are we missing? 
 If you see a future topic we need to consider, take a look at our [contributing page](https://github.com/GSA/api-standards/blob/master/CONTRIBUTING.md) for instructions to share that info.
