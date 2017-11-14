@@ -189,6 +189,8 @@ Keys managed by api.data.gov can be re-used with other APIs hosted by this servi
 
 This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
 
+For help setting this up, contact [the api.data.gov team](api.data.gov@gsa.gov)
+
 ### Error handling
 
 Handle all errors (including otherwise uncaught exceptions) and return a data structure in the same format as the rest of the API.
