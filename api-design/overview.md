@@ -1,4 +1,4 @@
-_Under Construction.  Please read on and share feedback or propose edits.  [Tracking can be found here](https://github.com/GSA/api-standards/tree/master/api-design).  _
+_Under Construction.  Please read on and share feedback or propose edits.  [Tracking can be found here](https://github.com/GSA/api-standards/tree/master/api-design)._
 
 ----------------
 
