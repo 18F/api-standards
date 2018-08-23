@@ -147,6 +147,10 @@ Some examples of these principles in action:
 * [SAM API](http://gsa.github.io/sam_api/sam/)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
+### Base Domain
+
+We have set up `api.gsa.gov` as a foundation that [can be used as the base domain](https://github.com/GSA/api-standards/blob/master/api-design/overview.md) for all agency APIs.  When combined with the below Taxonomy, this creates a more consistent, developer-friendly experience.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  For help setting this up, contact [the api.data.gov team](api.data.gov@gsa.gov).
+
 ### Taxonomy 
 If the API is intended to share data across the GSA enteprise or beyond, consider referencing the GSA Taxonomy. Contact GSA's Chief Data Officer for more information.
 
