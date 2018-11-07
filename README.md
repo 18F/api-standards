@@ -4,11 +4,10 @@ This document captures **GSA's recommended best practices, conventions, and stan
 
 # Index
 [About These Standards](#about-these-standards)  
-[Mandatory Items](#mandatory-items)
-[Other Considerations](#other-considerations)
-[SOAP Web Services](#soap-web-services)
+[Mandatory Items](#mandatory-items)  
+[Other Considerations](#other-considerations)  
+[SOAP Web Services](#soap-web-services)  
 [Future Topics](#future-topics)  
-[Public Domain](#public-domain)
 
 
 ## About These Standards
