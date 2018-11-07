@@ -4,9 +4,9 @@ This document captures **GSA's recommended best practices, conventions, and stan
 
 # Index
 [About These Standards](#about-these-standards)  
-[Overall Considerations](#overall-considerations)  
-[Developers Are Your End Users](#developers-are-your-end-users)  
-[Design Considerations](#design-considerations)  
+[Mandatory Items](#mandatory-items)
+[Other Considerations](#other-considerations)
+[SOAP Web Services](#soap-web-services)
 [Future Topics](#future-topics)  
 [Public Domain](#public-domain)
 
@@ -151,7 +151,7 @@ A few methods to accomplish this include:
 * Creating a web page with a search feature that uses the API.
 * Modifying existing web pages or web applications to use the API instead of direct access to the database.
 
-## Developers Are Your End Users
+### Developers Are Your End Users
 Consider developers who will be using your APIs. Their path to using your API will include discovery and initial investigation, sample API calls, development and testing, deployment and production usage. Consider each of these functions in your documentation, support, and change notification process. Consider performing formal API Usability Testing to understand the developer experience in using your API. More information about this type of testing is available here: [API Usability Testing](https://pages.18f.gov/API-Usability-Testing/).
 
 ### Notifications of updates
