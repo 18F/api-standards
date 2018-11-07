@@ -29,21 +29,21 @@ A few specific recommendations are provided for [SOAP web services](#soap-web-se
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They generally focus on the "externals" that will be exposed to users.
 
 ### For public and non-public APIs
-These standards will be useful for both public and non-public APIs. For specific considerations about documenting non-public APIs, see [Provide Documentation](#provide-documentation).
+These standards will be useful for both public and non-public APIs. 
 
 ## Mandatory Items
-These items are the most important items for APIs to conform to.
+The fillowing items are the most important items for APIs to conform to.
 
-### Always use HTTPS
+### 1. Always use HTTPS
 All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). APIs should not allow HTTP connections.
 
-### Add your API to the GSA API Directory
+### 2. Add your API to the GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
 
-### Provide documentation using the API documentation template
-The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your API. Create public API documention using this template.
+### 3. Provide documentation using the API documentation template
+The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can be re-used for your API. Create public API documention using this template.
 
-At a minimum, API documentation should provide:
+Using that template, your API documentation should provide:
 * An overview of the contents of the API and the data sources.
 * Public APIs should provide production URLs for accessing the API. (Non-public APIs would exclude this.)
 * Required parameters and defaults.
@@ -56,10 +56,10 @@ Additional nice-to-haves include:
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
 
-### Provide an OpenAPI Specification
+### 4. Provide an OpenAPI Specification
 The API documentation should provide a link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification) to allow users to download it and use with tooling.
 
-### Provide A Feedback Mechanism That Is Clear and Monitored
+### 5. Provide A Feedback Mechanism That Is Clear and Monitored
 
 Have an obvious mechanism for clients to report issues and ask questions about the API. It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
 
@@ -67,9 +67,9 @@ When using GitHub for an API's code or documentation, use the associated issue t
 
 If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team watches for issues there.
 
-### Base Domain
+### 6. Use api.gsa.gov 
 
-We have set up `api.gsa.gov` as a foundation that [can be used as the base domain](https://github.com/GSA/api-standards/blob/master/api-design/overview.md) for all agency APIs.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  For help setting this up, contact the api.data.gov team at <api.data.gov@gsa.gov>.
+We have set up `api.gsa.gov` as a foundation that can be used as the base domain] for all agency APIs.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  For help setting this up, contact the api.data.gov team at <api.data.gov@gsa.gov>.
 
 The api.gsa.gov service also provides:
 * API key management
@@ -82,32 +82,49 @@ This allows newcomers to use and experiment with the API in demo environments an
 
 For help setting this up, contact [the api.data.gov team](api.data.gov@gsa.gov)
 
-### Versioning
-All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". 
+### 7. Provide Support For Versioning
+All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". And example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
 
+#### Breaking Changes (backwards-incompatible)
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version at a separate URL path. 
 
+Examples of Breaking Changes:
+- Adding an HTTP method
+- Adding a field to a request message
+- Adding a field to a response message
+- Adding a value to an enum
+- Adding a query parameter
+
+
+#### Non-Breaking Changes (backwards-incompatible)
+It is not necessary to increment the major API version for non-breaking changes.
+
+Examples of Non-Breaking Changes incldue:
+- Removing an HTTP method
+- Removing or renaming a field in the request or response message
+- Removing or renaming a query parameter
+- Changing the URL format
+
+#### Support for Previous Versions
 Leave at least one previous version intact. And communicate to existing users to understand when previous versions will be decommissioned.
 
 #### Prototype or Alpha Versions
 Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
 
-You can see an example of this in practice in the [SAM API](http://gsa.github.io/sam_api/sam/versioning.html).
-
-### API endpoint design
+### 8. API endpoint design
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
 * The URL path (e.g. `/articles`)
 
 The URL path should follow this pattern if possible for a collection of items:
-`(base domain)/{business_function}/{application_name}/{version}/{plural_noun}`
+`(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}`
 
 An example would be:
 `api.gsa.gov/financial_management/sample_app/v1/vendors`
 
 The URL path for an individual item in this collection would default to:
-`(base domain)/{business_function}/{application_name}/{version}/{plural_noun}/{identifier}`
+`(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}/{identifier}`
 
 An example would be:
 `api.gsa.gov/financial_management/sample_app/v1/vendors/123`
