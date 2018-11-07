@@ -31,7 +31,7 @@ Because APIs may be developed with multiple technologies, these standards avoid 
 ### For public and non-public APIs
 These standards will be useful for both public and non-public APIs. For specific considerations about documenting non-public APIs, see [Provide Documentation](#provide-documentation).
 
-## Core Standards
+## Mandatory Items
 These items are the most important items for APIs to conform to.
 
 ### Always use HTTPS
