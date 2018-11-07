@@ -39,20 +39,11 @@ All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki
 ### 2. Add your API to the GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
 
-### 3. Provide an OpenAPI Specification
-The API documentation should provide a link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification) to allow users to download it and use with tooling.
+### 3. Use api.gsa.gov 
 
-### 4. Provide A Feedback Mechanism That Is Clear and Monitored
+We have set up `api.gsa.gov` as a foundation that can be used as the base domain] for all agency APIs.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  
 
-Have an obvious mechanism for clients to report issues and ask questions about the API. It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
-
-When using GitHub for an API's code or documentation, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
-
-If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team watches for issues there.
-
-### 5. Use api.gsa.gov 
-
-We have set up `api.gsa.gov` as a foundation that can be used as the base domain] for all agency APIs.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  For help setting this up, contact the api.data.gov team at <api.data.gov@gsa.gov>.
+Initially, this service can be added as a new version of the URL, and then existing users can be transitioned to the new URL. For help setting this up, contact the api.data.gov team at <api.data.gov@gsa.gov>.
 
 The api.gsa.gov service also provides:
 * API key management
@@ -65,7 +56,7 @@ This allows newcomers to use and experiment with the API in demo environments an
 
 For help setting this up, contact [the api.data.gov team](api.data.gov@gsa.gov)
 
-### 7. Provide Support For Versioning
+### 4. Provide Support For Versioning
 All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". And example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
 
 #### Breaking Changes (backwards-incompatible)
@@ -94,7 +85,7 @@ Leave at least one previous version intact. And communicate to existing users to
 #### Prototype or Alpha Versions
 Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
 
-### 8. API endpoint design
+### 5. API endpoint design
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
@@ -112,7 +103,7 @@ The URL path for an individual item in this collection would default to:
 An example would be:
 `api.gsa.gov/financial_management/sample_app/v1/vendors/123`
 
-### 9. Provide public documentation
+### 6. Provide public documentation
 The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can be re-used for your API. 
 
 Your API documentation should provide:
@@ -128,6 +119,16 @@ Additional nice-to-haves include:
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
 
+### 7. Provide A Feedback Mechanism That Is Clear and Monitored
+
+Have an obvious mechanism for clients to report issues and ask questions about the API. It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
+
+When using GitHub for an API's code or documentation, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
+
+If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team watches for issues there.
+
+### 8. Provide an OpenAPI Specification
+The API documentation should provide a link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification) to allow users to download it and use with tooling.
 
 ## Other Considerations
 
