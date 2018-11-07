@@ -83,7 +83,7 @@ This allows newcomers to use and experiment with the API in demo environments an
 For help setting this up, contact [the api.data.gov team](api.data.gov@gsa.gov)
 
 ### Versioning
-The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". 
+All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". 
 
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version at a separate URL path. 
 
