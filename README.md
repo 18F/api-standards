@@ -50,11 +50,7 @@ The api.gsa.gov service also provides:
 * rate limiting (throttling)
 * gathering usage statistics (analytics)
 
-Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys. 
-
-This allows newcomers to use and experiment with the API in demo environments and with simple `curl`/`wget`/etc. requests.
-
-For help setting this up, contact [the api.data.gov team](api.data.gov@gsa.gov)
+Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys, which reduces the "Time To First Hello World" for developers using your API.
 
 ### 4. Provide Support For Versioning
 All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". And example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
@@ -95,13 +91,13 @@ The URL path should follow this pattern if possible for a collection of items:
 `(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}`
 
 An example would be:
-`api.gsa.gov/financial_management/sample_app/v1/vendors`
+`https://api.gsa.gov/financial_management/sample_app/v1/vendors`
 
 The URL path for an individual item in this collection would default to:
 `(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}/{identifier}`
 
 An example would be:
-`api.gsa.gov/financial_management/sample_app/v1/vendors/123`
+`https://api.gsa.gov/financial_management/sample_app/v1/vendors/123`
 
 ### 6. Provide public documentation
 The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can be re-used for your API. 
@@ -125,10 +121,10 @@ Have an obvious mechanism for clients to report issues and ask questions about t
 
 When using GitHub for an API's code or documentation, use the associated issue tracker. In addition, publish an email address for direct, non-public inquiries.
 
-If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team watches for issues there.
+If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team subscribes to issues there.
 
 ### 8. Provide an OpenAPI Specification
-The API documentation should provide a link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification) to allow users to download it and use with tooling.
+The API documentation should provide a clear link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification). This specification file can be used by development or testing tools accessing your API.
 
 ## Other Considerations
 
@@ -158,7 +154,7 @@ Consider developers who will be using your APIs. Their path to using your API wi
 
 Have a simple mechanism for clients to follow changes to the API.
 
-Common ways to do this include a mailing list, or a [dedicated developer blog](https://developer.github.com/changes/) with an RSS feed.
+Common ways to do this include a mailing list or a persistent issue in the GitHub repository that users can subscribe to. For example: [Notification Thread: Updates to GSA APIs]](https://github.com/GSA/GSA-APIs/issues/46)
 
 ### Decommission unsupported APIs
 
