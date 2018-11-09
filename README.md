@@ -31,7 +31,6 @@ Because APIs may be developed with multiple technologies, these standards avoid 
 These standards will be useful for both public and non-public APIs. 
 
 ## Mandatory Items
-The following items are the most important items for APIs to conform to:
 
 ### 1. Always use HTTPS
 All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). APIs should not allow HTTP connections.
