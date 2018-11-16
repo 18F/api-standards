@@ -52,7 +52,7 @@ The api.gsa.gov service also provides:
 Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys, which reduces the "Time To First Hello World" for developers using your API.
 
 ### 4. Provide Support For Versioning
-All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". And example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
+All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". An example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
 
 #### Breaking Changes (backwards-incompatible)
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version at a separate URL path. 
