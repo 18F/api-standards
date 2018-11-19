@@ -2,7 +2,9 @@
 
 This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
 
-# BETA
+<span style="color:red"> **BETA** </span>
+
+(Note: These standards are prescriptive and a work-in-progress.  [Comments](https://github.com/GSA/api-standards/issues) are welcome!)
 
 # Index
 [About These Standards](#about-these-standards)  
