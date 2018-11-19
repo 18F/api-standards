@@ -1,9 +1,4 @@
-November 2018: Updates to these standards are in progress on this branch: [https://github.com/gsa/api-standards/tree/2018-updates](https://github.com/gsa/api-standards/tree/2018-updates)
-
-
 <span style="color:red"> **BETA** </span>
-
-(Note: These standards are prescriptive and a work-in-progress.  [Comments](https://github.com/GSA/api-standards/issues) are welcome!)
 
 # GSA API Standards
 
