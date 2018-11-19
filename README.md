@@ -1,6 +1,4 @@
-<span style="color:red"> **BETA** </span>
-
-# GSA API Standards
+# GSA API Standards (BETA)
 
 This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
 
