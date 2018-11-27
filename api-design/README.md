@@ -11,7 +11,7 @@
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/systems/datagov/3/ ? |
 | Discovery API | https://discovery.gsa.gov/api/ | ---- | 
 | [eMuseum API](http://gsa.github.io/eMuseum-API/) | https://gsafinearts.pbs.gsa.gov/emuseum/api/ |  https://api.gsa.gov/systems/emuseum/ ? |
-| [FedBizOpps API](https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation) | | |
+| [FedBizOpps API](https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation) | https://fbo.gov/ws/fbo_api.php | |
 | [Federal Procurement Data System - FPDS API](https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc) |  |  | 
 | [Go.USA.gov API](https://go.usa.gov/api) | http://go.usa.gov/api/ |  http://api.usa.gov/go/ ? |
 | [Government Jobs API](http://search.digitalgov.gov/developer/jobs.html) |  https://api.usa.gov/jobs/ | Done |
