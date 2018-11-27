@@ -68,7 +68,7 @@ Examples of Breaking Changes:
 #### Non-Breaking Changes (backwards-incompatible)
 It is not necessary to increment the major API version for non-breaking changes.
 
-Examples of Non-Breaking Changes incldue:
+Examples of Non-Breaking Changes include:
 - Adding an HTTP method
 - Adding a field to a request message
 - Adding a field to a response message
