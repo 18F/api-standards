@@ -17,7 +17,7 @@
 | [Government Jobs API](http://search.digitalgov.gov/developer/jobs.html) |  https://api.usa.gov/jobs/ | Done |
 | GSA Fleet Vehicles API | ---- | ---- |
 | GSA.GOV content API | https://www.gsa.gov/content-api | ---- |
-| [Per Diem API](http://gsa.gov/portal/content/162379) | | |
+| [Per Diem API](http://gsa.gov/portal/content/162379) | https://inventory.data.gov/api/action/datastore_search?resource_id=8ea44bc4-22ba-4386-b84c-1494ab28964b | |
 | Product Service Codes (PSC) API - beta.sam.gov | https://api.sam.gov/prod/locationservices/v1/api | ------ |
 | Search.gov i14y API | ? | ------ | 
 | Search.gov Search Results API | ? | ------ | 
