@@ -4,7 +4,7 @@
 
 | API  |  Current Endpoint |  Proposed Endpoint | 
 |---|---|---|
-| Acquisition Gateway API | ---- |
+| Acquisition Gateway API | https://hallways.cap.gsa.gov/api/v1.0 |
 | [analytics.usa.gov](https://analytics.usa.gov/developer) | https://api.gsa.gov/analytics/dap/ | https://api.gsa.gov/analytics/dotgov/ |
 | [Api.Data.Gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/ |done|
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/
