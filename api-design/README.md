@@ -10,7 +10,6 @@
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/systems/datagov/3/ ? |
 | Discovery API | https://discovery.gsa.gov/api/ | ---- | 
-| [Digital Signature Solution API](https://gsa.github.io/DSSAPIDocumentation/api-docs/) | | |
 | [eMuseum API](http://gsa.github.io/eMuseum-API/) | https://gsafinearts.pbs.gsa.gov/emuseum/api/ |  https://api.gsa.gov/systems/emuseum/ ? |
 | [FedBizOpps API](https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation) | | |
 | [Federal Procurement Data System - FPDS API](https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc) |  |  | 
