@@ -4,9 +4,9 @@
 
 | API  |  Current Endpoint |  Proposed Endpoint | 
 |---|---|---|
-| [analytics.usa.gov](https://analytics.usa.gov/developer) | https://api.gsa.gov/analytics/dap/ | Done |
-| [Api.Data.Gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/api-umbrella/ |https://api.gsa.gov/systems/api.data.gov/ ?|
-| [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions | https://api.gsa.gov/auctions/ ?|
+| [analytics.usa.gov](https://analytics.usa.gov/developer) | https://api.gsa.gov/analytics/dap/ | https://api.gsa.gov/analytics/dotgov/ |
+| [Api.Data.Gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/ |done|
+| [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions | https://api.gsa.gov/auctions/ |
 | [Corporate Consumer Contact Information](http://www.usa.gov/About/developer-resources/corporation-contact-directory/index.shtml) |  https://www.usa.gov/api/USAGovAPI/corporate/ | ? |
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/systems/datagov/3/ ? |
 | [DigitalGov Search API](https://search.usa.gov/login) | | |
