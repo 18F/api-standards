@@ -59,21 +59,21 @@ All APIs must support versioning. The recommended method of versioning APIs is t
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version at a separate URL path. 
 
 Examples of Breaking Changes:
-- Adding an HTTP method
-- Adding a field to a request message
-- Adding a field to a response message
-- Adding a value to an enum
-- Adding a query parameter
+- Removing an HTTP method
+- Removing or renaming a field in the request or response message
+- Removing or renaming a query parameter
+- Changing the URL format
 
 
 #### Non-Breaking Changes (backwards-incompatible)
 It is not necessary to increment the major API version for non-breaking changes.
 
 Examples of Non-Breaking Changes incldue:
-- Removing an HTTP method
-- Removing or renaming a field in the request or response message
-- Removing or renaming a query parameter
-- Changing the URL format
+- Adding an HTTP method
+- Adding a field to a request message
+- Adding a field to a response message
+- Adding a value to an enum
+- Adding a query parameter
 
 #### Support for Previous Versions
 Leave at least one previous version intact. And communicate to existing users to understand when previous versions will be decommissioned.
