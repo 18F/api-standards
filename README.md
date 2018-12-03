@@ -39,9 +39,9 @@ All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki
 ### 2. Add your API to the GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
 
-### 3. Use api.gsa.gov 
+### 3. Use api.data.gov Service
 
-We have set up `api.gsa.gov` as a foundation that can be used as the base domain for all agency APIs.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  
+The [api.data.gov service](https://api.data.gov/about/) is an API management service for federal agencies. We have set up `api.gsa.gov` as a foundation that can be used as the base domain for all agency APIs.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  In some cases, other specific base domains can be established with this service.
 
 Initially, this service can be added as a new version of the URL, and then existing users can be transitioned to the new URL. For help setting this up, contact the api.data.gov team at <api.data.gov@gsa.gov>.
 
@@ -154,7 +154,7 @@ Consider developers who will be using your APIs. Their path to using your API wi
 
 Have a simple mechanism for clients to follow changes to the API.
 
-Common ways to do this include a mailing list or a persistent issue in the GitHub repository that users can subscribe to. For example: [Notification Thread: Updates to GSA APIs]](https://github.com/GSA/GSA-APIs/issues/46)
+Common ways to do this include a mailing list or a persistent issue in the GitHub repository that users can subscribe to. For example: [Notification Thread: Updates to GSA APIs](https://github.com/GSA/GSA-APIs/issues/46)
 
 ### Decommission unsupported APIs
 
