@@ -81,25 +81,7 @@ Leave at least one previous version intact. And communicate to existing users to
 #### Prototype or Alpha Versions
 Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
 
-### 5. API endpoint design
-An "endpoint" is a combination of two things:
-
-* The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
-* The URL path (e.g. `/articles`)
-
-The URL path should follow this pattern if possible for a collection of items:
-`(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}`
-
-An example would be:
-`https://api.gsa.gov/financial_management/sample_app/v1/vendors`
-
-The URL path for an individual item in this collection would default to:
-`(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}/{identifier}`
-
-An example would be:
-`https://api.gsa.gov/financial_management/sample_app/v1/vendors/123`
-
-### 6. Provide public documentation
+### 5. Provide public documentation
 The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can be re-used for your API. 
 
 Your API documentation should provide:
@@ -115,7 +97,7 @@ Additional nice-to-haves include:
 * Interactive documentation to demonstrate sample calls.
 * Sample client code for consuming the API in common languages.
 
-### 7. Provide A Feedback Mechanism That Is Clear and Monitored
+### 6. Provide A Feedback Mechanism That Is Clear and Monitored
 
 Have an obvious mechanism for clients to report issues and ask questions about the API. It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
 
@@ -123,8 +105,29 @@ When using GitHub for an API's code or documentation, use the associated issue t
 
 If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team subscribes to issues there.
 
-### 8. Provide an OpenAPI Specification
+### 7. Provide an OpenAPI Specification
 The API documentation should provide a clear link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification). This specification file can be used by development or testing tools accessing your API.
+
+## Mandatory For New APIs
+
+### 8. Follow Standard API endpoint design
+An "endpoint" is a combination of two things:
+
+* The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
+* The URL path (e.g. `/articles`)
+
+The URL path should follow this pattern for a collection of items:
+`(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}`
+
+An example would be:
+`https://api.gsa.gov/financial_management/sample_app/v1/vendors`
+
+The URL path for an individual item in this collection would default to:
+`(base domain)/{business_function}/{application_name}/{major version}/{plural_noun}/{identifier}`
+
+An example would be:
+`https://api.gsa.gov/financial_management/sample_app/v1/vendors/123`
+
 
 ## Other Considerations
 
