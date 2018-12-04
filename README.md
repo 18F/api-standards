@@ -6,6 +6,7 @@ This document captures **GSA's recommended best practices, conventions, and stan
 # Index
 [About These Standards](#about-these-standards)  
 [Mandatory Items](#mandatory-items)  
+[Mandatory For New APIs](#mandatory-for-new-apis)  
 [Other Considerations](#other-considerations)  
 [SOAP Web Services](#soap-web-services)  
 [Future Topics](#future-topics)  
