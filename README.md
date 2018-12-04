@@ -60,14 +60,17 @@ Keys managed by api.data.gov can be re-used with other APIs hosted by this servi
 ### 4. Provide Support For Versioning
 All APIs must support versioning. The recommended method of versioning APIs is to include a major version number in the URL path. For example "/v1/". An example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
 
+#### Major and Minor Versions
+Major versions (e.g. v 1, v2) should be reserved for breaking changes and major releases. Minor versions (eg. 1.1, 2.3) should represent non-breaking changes and should not require changes on the client to continue consuming the API. Minor versions should NOT be reflected in the URL (which would be a breaking change). 
+
 #### Breaking Changes (backwards-incompatible)
-Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version at a separate URL path. 
+Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version. 
 
 Examples of Breaking Changes:
 - Removing an HTTP method
 - Removing or renaming a field in the request or response message
 - Removing or renaming a query parameter
-- Changing the URL format
+- Changing the URL or URL format
 
 
 #### Non-Breaking Changes (backwards-incompatible)
@@ -81,7 +84,7 @@ Examples of Non-Breaking Changes include:
 - Adding a query parameter
 
 #### Support for Previous Versions
-Leave at least one previous version intact. And communicate to existing users to understand when previous versions will be decommissioned.
+Leave at least one previous major version intact. And communicate to existing users to understand when previous versions will be decommissioned.
 
 #### Prototype or Alpha Versions
 Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
