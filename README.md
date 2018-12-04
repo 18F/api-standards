@@ -36,13 +36,13 @@ These standards will be useful for both public and non-public APIs. However, ini
 
 These are mandatory for existing and new APIs.
 
-### 1. Always use HTTPS
+### 1. Always Use HTTPS
 All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). APIs should not allow HTTP connections.
 
-### 2. Add your API to the GSA API Directory
+### 2. Add Your API To The GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
 
-### 3. Use the api.data.gov Service
+### 3. Use The api.data.gov Service
 
 The [api.data.gov service](https://api.data.gov/about/) is an API management service for federal agencies. GSA APIs should use the `api.gsa.gov` base domain with this service.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  In some cases, other specific base domains can be established with this service for GSA APIs.
 
@@ -89,7 +89,7 @@ Leave at least one previous major version intact. And communicate to existing us
 #### Prototype or Alpha Versions
 Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
 
-### 5. Provide public documentation
+### 5. Provide Public Documentation
 The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can be re-used for your API. 
 
 Your API documentation should provide:
@@ -113,7 +113,7 @@ When using GitHub for an API's code or documentation, use the associated issue t
 
 If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team subscribes to issues there.
 
-### 7. Provide an OpenAPI Specification File
+### 7. Provide An OpenAPI Specification File
 The API documentation should provide a clear link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification). This specification was formerly known as the Swagger specfication. This specification file can be used by development or testing tools accessing your API. 
 
 Using Version 2.0 or later of the specification is recommended. Information about versions can be found here: [OpenAPI Specification Revision History](https://swagger.io/specification/#revisionHistory).
@@ -122,7 +122,7 @@ Using Version 2.0 or later of the specification is recommended. Information abou
 
 In addition to the mandatory items above, new APIs must also implement these.
 
-### 8. Follow Standard API endpoint design
+### 8. Follow The Standard API Endpoint Design
 An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
