@@ -1,7 +1,7 @@
 # GSA API Standards
 ## Nov 2018 Update
 
-This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. We encourage GSA development groups to use these standards when developing APIs for GSA.
+This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. Projects should start with the [Mandatory Items](#mandatory-items) and [Mandatory For New APIs](#mandatory-for-new-apis). After addressing those, review [Other Considerations](#other-considerations) for additional advice.
 
 # Index
 [About These Standards](#about-these-standards)  
@@ -18,7 +18,7 @@ These standards are forked from the [18F API Standards](https://github.com/18F/a
 
 ### The standards are a roadmap not a roadblock
 
-These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. We believe these standards will benefit GSA API development and provide consistency. Projects can benefit if they start considering these in their design even if they do not implement them all.
+These standards are intended to streamline the process for GSA organizations to publish new APIs by providing practical and pragmatic advice. We believe these standards will benefit GSA API development and provide consistency. 
 
 
 ### They primarily focus on RESTful APIs
@@ -33,6 +33,8 @@ Because APIs may be developed with multiple technologies, these standards avoid 
 These standards will be useful for both public and non-public APIs. However, initially the mandatory items will be mandatory only for the public APIs.
 
 ## Mandatory Items
+
+These are mandatory for existing and new APIs.
 
 ### 1. Always use HTTPS
 All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). APIs should not allow HTTP connections.
@@ -110,6 +112,8 @@ If you don't have a support channel specific to your API, you can use the issue 
 The API documentation should provide a clear link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification). This specification file can be used by development or testing tools accessing your API.
 
 ## Mandatory For New APIs
+
+In addition to the mandatory items above, new APIs must also implement these.
 
 ### 8. Follow Standard API endpoint design
 An "endpoint" is a combination of two things:
