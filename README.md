@@ -42,7 +42,7 @@ All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki
 ### 2. Add your API to the GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
 
-### 3. Use api.data.gov Service
+### 3. Use the api.data.gov Service
 
 The [api.data.gov service](https://api.data.gov/about/) is an API management service for federal agencies. GSA APIs should use the `api.gsa.gov` base domain with this service.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  In some cases, other specific base domains can be established with this service for GSA APIs.
 
