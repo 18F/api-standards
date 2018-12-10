@@ -66,7 +66,7 @@ Keys managed by api.data.gov can be re-used with other APIs hosted by this servi
 All APIs must support versioning. The recommended method of versioning REST APIs is to include a major version number in the URL path. For example "/v1/". An example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
 
 #### Major and Minor Versions
-Major versions (e.g. v1, v2) should be reserved for breaking changes and major releases. Minor versions (eg. 1.1, 2.3) are not required, but can provide additional information about the API. If used, they should not be in the URL, but should be in the HTTP Response Headers. 
+Major versions (e.g. v1, v2) should be reserved for breaking changes and major releases. Minor versions (eg. 1.1, 2.3) are not required, but can provide additional information about the API. If used, they should not be in the URL, but should be in the HTTP Headers. 
 
 #### Breaking Changes (backwards-incompatible) 
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version. 
