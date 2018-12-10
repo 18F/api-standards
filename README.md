@@ -68,25 +68,35 @@ All APIs must support versioning. The recommended method of versioning APIs is t
 #### Major and Minor Versions
 Major versions (e.g. v1, v2) should be reserved for breaking changes and major releases. Minor versions (eg. 1.1, 2.3) are not required, but can provide additional information about the API. If used, they should not be in the URL, but should be in the HTTP Response Headers. 
 
-#### Breaking Changes (backwards-incompatible)
+#### Breaking Changes (backwards-incompatible) 
 Any changes made to a specific version of your API should not break your contract with existing users. If you need to make a change that will break that contract, create a new major version. 
 
-Examples of Breaking Changes:
+Examples of Breaking Changes for REST APIs:
 - Removing an HTTP method
 - Removing or renaming a field in the request or response message
 - Removing or renaming a query parameter
 - Changing the URL or URL format
 
+Examples of Breaking Changes for SOAP web services:
+- Removing an operation
+- Renaming an operation
+- Changing the parameters (in data type or order) of an operation
+- Changing the structure of a complex data type.
 
 #### Non-Breaking Changes (backwards-compatible)
 It is not necessary to increment the major API version for non-breaking changes. Non-breaking changes can be reflected in a minor version, if used.
 
-Examples of Non-Breaking Changes include:
+Examples of Non-Breaking Changes for REST APIs:
 - Adding an HTTP method
 - Adding a field to a request message
 - Adding a field to a response message
 - Adding a value to an enum
 - Adding a query parameter
+
+Examples of Non-Breaking Changes for SOAP web services:
+- Adding a new WSDL operation to an existing WSDL document.
+- Adding a new XML schema type within a WSDL document that are not contained within previously existing types
+
 
 #### Support for Previous Versions
 Leave at least one previous major version intact. And communicate to existing users to understand when previous versions will be decommissioned.
@@ -279,6 +289,8 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 * Provide documentation for SOAP web services.
 
   Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
+
+* See examples of versioning of SOAP web services above. 
 
 ## Future Topics
 Several additional API related topics continue to emerge and will be considered for future updates to these standards.
