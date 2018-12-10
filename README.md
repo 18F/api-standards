@@ -277,7 +277,7 @@ For the simplest and most common use case, where the entire API should be access
 Access-Control-Allow-Origin: *
 ```
 
-It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients, like [jQuery](https://jquery.com).
+It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients.
 
 For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) or [Mozilla's guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
