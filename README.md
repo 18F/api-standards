@@ -32,6 +32,11 @@ Because APIs may be developed with multiple technologies, these standards avoid 
 ### For public and non-public APIs
 These standards will be useful for both public and non-public APIs. However, initially the mandatory items will be mandatory only for the public APIs.
 
+For the purposes of these standards, we use the following definitions:
+  * **Non Public APIs** - Available only to GSA applications and users.
+  * **Public APIs** - Available to non-GSA applications and users. Examples include the general public, other agencies, or private companies.
+
+
 ## Mandatory Items
 
 These are mandatory for existing and new APIs.
