@@ -1,7 +1,6 @@
 # GSA API Standards
-## Nov 2018 Update
 
-This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. Projects should start with the [Mandatory Items](#mandatory-items) and [Mandatory For New APIs](#mandatory-for-new-apis). After addressing those, review [Other Considerations](#other-considerations) for additional advice.
+This document captures **GSA's recommended best practices, conventions, and standards for Application Programming Interfaces (APIs)**. Projects should start by implementing the [Mandatory Items](#mandatory-items) and [Mandatory For New APIs](#mandatory-for-new-apis). After addressing those, review [Other Considerations](#other-considerations) for additional advice.
 
 # Index
 [About These Standards](#about-these-standards)  
