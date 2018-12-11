@@ -257,7 +257,7 @@ Example of how that might be implemented:
 
 Just [use UTF-8](http://utf8everywhere.org).
 
-Expect accented characters or "smart quotes" in API output, even if they're not expected.
+Handle accented characters or "smart quotes" in API output, even if they're not expected.
 
 An API should tell clients to expect UTF-8 by including a charset notation in the `Content-Type` header for responses.
 
