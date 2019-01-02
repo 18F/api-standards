@@ -215,12 +215,13 @@ This date format is used all over the web, and puts each field in consistent ord
 
 ### HTTP Response Codes
 
-The following are recommended HTTP Response Codes that API should return.
+The following are recommended HTTP Response Codes that API should return. They are based on the [OWASP REST Security Cheat Sheet] (https://www.owasp.org/index.php/REST_Security_Cheat_Sheet) from December 2018.
 
 | Return Code  | Message | Description |
 | ---  | ----- | --------------------- |
 | 200  | OK | Response to a successful REST API action. The HTTP method can be GET, POST, PUT, PATCH or DELETE. |
 | 201  | Created | The request has been fulfilled and the resource created. A URL for the created resource is returned in the Location header. |
+| 202  | Accepted | The request has been accepted for processing, but processing is not yet complete | 
 | 400  | Bad Request | The request is malformed, such as a message body format error, missing headers, etc. |
 | 401  | Unauthorized | Wrong or no authentication ID/ password provided. |
 | 403  | Forbidden | Used when the authentication succeeded but the authenticated user does not have permission to the requested resource. |
@@ -229,9 +230,10 @@ The following are recommended HTTP Response Codes that API should return.
 | 405  | Method Not Allowed | The error for an unexpected HTTP method. For example, the REST API is expecting HTTP GET, but HTTP PUT is used. |
 | 413  | Payload Too Large | Used to signal that the request size exceeded the given limit (e.g. regarding file uploads and to ensure that the requests have reasonable sizes). |
 | 415  | Unsupported Media Type | The requested content type is not supported by the REST service. This is especially effective when you are working primary with JSON or XML media types. |
-| 429  | Too Many Requests | The error is used when there may be a DOS attack detected or the request is rejected due to rate limiting. |
-| 5XX | Server side error | Return 500-level responses for service side failures, such as uncaught exceptions. **Do not return stack traces, because these return information about the internals of your API.** |
-
+| 429  | Too Many Requests | The error is used when there may be a DOS attack detected or the request is rejected due to rate limiting. | 
+| 500  | Internal Server Error | An unexpected condition prevented the server from fulfilling the request. Be aware that the response should not reveal internal information that helps an attacker, e.g. detailed error messages or stack traces. |
+| 501  | Not Implemented | The REST service does not implement the requested operation yet |
+| 502  | Service Unavailable | The REST service is temporarily unable to process the request. Used to inform the client it should retry at a later time. |
 
 ### Pagination
 
