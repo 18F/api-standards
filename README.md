@@ -158,6 +158,9 @@ An example would be:
 
 ## Other Considerations
 
+### Follow the GSA API Security Guide
+Security is critical to APIs. Review the GSA API Security Guide and implement the practices there.
+
 ### Design for common use cases
 
 For APIs that syndicate data, consider several common client use cases:
