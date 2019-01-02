@@ -213,20 +213,24 @@ For just dates, that looks like `2013-02-27`. For full times, that's of the form
 
 This date format is used all over the web, and puts each field in consistent order -- from least granular to most granular.
 
-### Error handling
+### HTTP Response Codes
 
-Handle all errors (including otherwise uncaught exceptions) and return a data structure in the same format as the rest of the API.
+The following are recommended HTTP Response Codes that API should return.
 
-For example, a JSON API might provide the following when an uncaught exception occurs:
-
-```json
-{
-  "message": "Description of the error.",
-  "exception": "Description of the error"
-}
-```
-
-HTTP responses with error details should use a `4XX` status code to indicate a client-side failure (such as invalid authorization, or an invalid parameter), and a `5XX` status code to indicate server-side failure (such as an uncaught exception).
+| Return Code  | Message | Description |
+| ---  | ----- | --------------------- |
+| 200  | OK | Response to a successful REST API action. The HTTP method can be GET, POST, PUT, PATCH or DELETE. |
+| 201  | Created | The request has been fulfilled and the resource created. A URL for the created resource is returned in the Location header. |
+| 400  | Bad Request | The request is malformed, such as a message body format error, missing headers, etc. |
+| 401  | Unauthorized | Wrong or no authentication ID/ password provided. |
+| 403  | Forbidden | Used when the authentication succeeded but the authenticated user does not have permission to the requested resource. |
+| 404  | Not Found | When a non-existent resource is requested. |
+| 406  | Unacceptable | The client presented a content type in the Accept header which is not supported by the server API. |
+| 405  | Method Not Allowed | The error for an unexpected HTTP method. For example, the REST API is expecting HTTP GET, but HTTP PUT is used. |
+| 413  | Payload Too Large | Used to signal that the request size exceeded the given limit (e.g. regarding file uploads and to ensure that the requests have reasonable sizes). |
+| 415  | Unsupported Media Type | The requested content type is not supported by the REST service. This is especially effective when you are working primary with JSON or XML media types. |
+| 429  | Too Many Requests | The error is used when there may be a DOS attack detected or the request is rejected due to rate limiting. |
+| 5XX | Return 500-level responses for service side failures, such as uncaught exceptions. **Do not return stack traces, because these return information about the internals of your API.**
 
 
 ### Pagination
