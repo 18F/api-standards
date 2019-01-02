@@ -235,6 +235,8 @@ The following are recommended HTTP Response Codes that API should return. They a
 | 501  | Not Implemented | The REST service does not implement the requested operation yet |
 | 502  | Service Unavailable | The REST service is temporarily unable to process the request. Used to inform the client it should retry at a later time. |
 
+Note: GSA APIs [should be using the api.data.gov service](#3-use-the-apidatagov-service) as a proxy between the client and the API. That service will return additional HTTP codes, prior to the request reaching the base API. Here is a list of those code: [https://api.data.gov/docs/errors/](https://api.data.gov/docs/errors/)
+
 ### Pagination
 
 If pagination is required to navigate datasets, use the method that makes the most sense for the API's data.
