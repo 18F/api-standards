@@ -230,7 +230,7 @@ The following are recommended HTTP Response Codes that API should return.
 | 413  | Payload Too Large | Used to signal that the request size exceeded the given limit (e.g. regarding file uploads and to ensure that the requests have reasonable sizes). |
 | 415  | Unsupported Media Type | The requested content type is not supported by the REST service. This is especially effective when you are working primary with JSON or XML media types. |
 | 429  | Too Many Requests | The error is used when there may be a DOS attack detected or the request is rejected due to rate limiting. |
-| 5XX | Return 500-level responses for service side failures, such as uncaught exceptions. **Do not return stack traces, because these return information about the internals of your API.**
+| 5XX | Server side error | Return 500-level responses for service side failures, such as uncaught exceptions. **Do not return stack traces, because these return information about the internals of your API.** |
 
 
 ### Pagination
@@ -287,6 +287,21 @@ Access-Control-Allow-Origin: *
 It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients.
 
 For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) or [Mozilla's guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+
+## API Testing
+
+At its most basic level, API testing is intended to reveal bugs: inconsistencies or deviations from the expected behavior. Continuous testing is also very important to make sure it continues to work when the public has access to it. The risk of putting a bad, and potentially insecure, product on the market is greater than the cost to test it.
+
+**Types of API Testing**
+- **Functionality testing** — the API works and does exactly what it’s supposed to do.
+- **Reliability testing** — the API can be consistently connected to and lead to consistent results
+- **Load testing** — the API can handle a large amount of calls
+- **Creativity testing** — the API can handle being used in different ways.
+- **Security testing** — the API has defined security requirements including authentication, permissions and access controls. 
+- **Proficiency testing** — the API increases what developers are able to do.
+- **API documentation testing** — also called discovery testing, the API documentation easily guides the user.
+- **Negative Testing** — checking for every kind of wrong input the user can possibly supply 
+
 
 ## SOAP Web Services
 * Provide a WSDL. 
