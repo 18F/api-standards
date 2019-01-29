@@ -105,7 +105,7 @@ Leave at least one previous major version intact. And communicate to existing us
 Use "/v0/" to represent an API that is in prototype or alpha phase and is likely to change frequently without warning.
 
 ### 5. Provide Public Documentation
-The developer's entry point to your API will likely be the documentation that you provide. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can be re-used for your API. 
+The developer's entry point to your API will likely be the documentation that you provide. You can host your API documentation directly on the GSA API Directory. More information is avialable here: [instructions for posting documentation on GSA API Directory](https://github.com/GSA/open-gsa-redesign/blob/master/APIDOCS.md).
 
 Your API documentation should provide:
 * An overview of the contents of the API and the data sources.
