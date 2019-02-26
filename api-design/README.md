@@ -8,7 +8,7 @@
 | [analytics.usa.gov](https://analytics.usa.gov/developer) | https://api.gsa.gov/analytics/dap/ | https://api.gsa.gov/analytics/dotgov/ |
 | [Api.Data.Gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/ |done|
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions
-| [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/systems/datagov/3/ ? |
+| [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/technology/datagov/v3/ ? |
 | Discovery API | https://discovery.gsa.gov/api/ | ---- | 
 | [eMuseum API](http://gsa.github.io/eMuseum-API/) | https://gsafinearts.pbs.gsa.gov/emuseum/api/ |  https://api.gsa.gov/systems/emuseum/ ? |
 | [FedBizOpps API](https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation) | https://fbo.gov/ws/fbo_api.php | |
