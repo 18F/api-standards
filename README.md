@@ -39,7 +39,7 @@ For the purposes of these standards, we use the following definitions:
 
 ## Mandatory Items
 
-These are mandatory for existing and new APIs.
+These are mandatory for existing and new Public APIs.
 
 ### 1. Always Use HTTPS
 All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). APIs should not allow HTTP connections.
@@ -133,7 +133,7 @@ The API documentation should provide a clear link to the [API's OpenAPI Specific
 
 Using Version 2.0 or later of the specification is recommended. Information about versions can be found here: [OpenAPI Specification Revision History](https://swagger.io/specification/#revisionHistory).
 
-## Mandatory For New APIs
+## Mandatory For New Public APIs
 
 In addition to the mandatory items above, new APIs must also implement these.
 
