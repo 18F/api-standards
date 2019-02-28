@@ -215,7 +215,7 @@ This date format is used all over the web, and puts each field in consistent ord
 
 ### HTTP Response Codes
 
-The following are recommended HTTP Response Codes that API should return. They are based on the [OWASP REST Security Cheat Sheet] (https://www.owasp.org/index.php/REST_Security_Cheat_Sheet) from December 2018.
+The following are recommended HTTP Response Codes that API should return. They are based on the [OWASP REST Security Cheat Sheet](https://www.owasp.org/index.php/REST_Security_Cheat_Sheet) from December 2018.
 
 | Return Code  | Message | Description |
 | ---  | ----- | --------------------- |
