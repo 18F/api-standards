@@ -22,6 +22,6 @@
 | Search.gov i14y API | ? | ------ | 
 | Search.gov Search Results API | ? | ------ | 
 | Search.gov Type-ahead API | ? | ------ | 
-| [Sustainable Facilities Tool API](https://sftool.gov/developers) | https://api.data.gov/sftool/v1/ | https://api.gsa.gov/buildings/sftool/v1/ ? |
+| [Sustainable Facilities Tool API](https://sftool.gov/developers) | https://api.data.gov/sftool/v1/ | https://api.gsa.gov/sustainability/sftool/v1/ ? |
 | [System for Award Management API](http://gsa.github.io/sam_api/sam/) | https://api.data.gov/sam/v1/ | https://api.gsa.gov/acquisitions/sam/v1/ |
 | [US Digital Registry API](https://usdigitalregistry.digitalgov.gov/) | https://api.gsa.gov/systems/digital-registry/ | https://api.gsa.gov/systems/digital-registry/ |
