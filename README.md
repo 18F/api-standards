@@ -39,7 +39,7 @@ For the purposes of these standards, we use the following definitions:
 
 ## Mandatory Items
 
-These are mandatory for existing and new Public APIs. Implementation is occurring in 2019.
+These are mandatory for existing and new Public APIs. Implementation is occurring throughout 2019.
 
 ### 1. Always Use HTTPS
 All APIs should require and use [HTTPS encryption](https://en.wikipedia.org/wiki/HTTP_Secure) (using TLS/SSL). APIs should not allow HTTP connections.
