@@ -288,7 +288,7 @@ For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) 
 
 * Provide documentation for SOAP web services.
 
-  Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
+  Users of SOAP web services need documentation, just like REST users. 
 
 * See examples of versioning of SOAP web services above. 
 
