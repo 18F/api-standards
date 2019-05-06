@@ -298,13 +298,13 @@ At its most basic level, API testing is intended to reveal bugs: inconsistencies
 
 **Types of API Testing**
 - **Functionality testing** — the API works and does exactly what it’s supposed to do.
-- **Reliability testing** — the API can be consistently connected to and lead to consistent results
-- **Load testing** — the API can handle a large amount of calls
+- **Reliability testing** — the API can be consistently connected to and lead to consistent results.
+- **Load testing** — the API can handle a large amount of calls.
 - **Creativity testing** — the API can handle being used in different ways.
 - **Security testing** — the API has defined security requirements including authentication, permissions and access controls. 
 - **Proficiency testing** — the API increases what developers are able to do.
 - **API documentation testing** — also called discovery testing, the API documentation easily guides the user.
-- **Negative Testing** — checking for every kind of wrong input the user can possibly supply 
+- **Negative Testing** — checking for every kind of wrong input the user can possibly supply.
 
 
 ## SOAP Web Services
