@@ -158,6 +158,9 @@ An example would be:
 
 ## Other Considerations
 
+### API Security
+API Security is governed by the GSA IT Security Procedural Guide: API Security CIO-IT Security-19-93.
+
 ### Design for common use cases
 
 For APIs that syndicate data, consider several common client use cases:
@@ -210,21 +213,29 @@ For just dates, that looks like `2013-02-27`. For full times, that's of the form
 
 This date format is used all over the web, and puts each field in consistent order -- from least granular to most granular.
 
-### Error handling
+### HTTP Response Codes
 
-Handle all errors (including otherwise uncaught exceptions) and return a data structure in the same format as the rest of the API.
+The following are recommended HTTP Response Codes that API should return. They are based on the [OWASP REST Security Cheat Sheet](https://www.owasp.org/index.php/REST_Security_Cheat_Sheet) from December 2018.
 
-For example, a JSON API might provide the following when an uncaught exception occurs:
+| Return Code  | Message | Description |
+| ---  | ----- | --------------------- |
+| 200  | OK | Response to a successful REST API action. The HTTP method can be GET, POST, PUT, PATCH or DELETE. |
+| 201  | Created | The request has been fulfilled and the resource created. A URL for the created resource is returned in the Location header. |
+| 202  | Accepted | The request has been accepted for processing, but processing is not yet complete | 
+| 400  | Bad Request | The request is malformed, such as a message body format error, missing headers, etc. |
+| 401  | Unauthorized | Wrong or no authentication ID/ password provided. |
+| 403  | Forbidden | Used when the authentication succeeded but the authenticated user does not have permission to the requested resource. |
+| 404  | Not Found | When a non-existent resource is requested. |
+| 406  | Unacceptable | The client presented a content type in the Accept header which is not supported by the server API. |
+| 405  | Method Not Allowed | The error for an unexpected HTTP method. For example, the REST API is expecting HTTP GET, but HTTP PUT is used. |
+| 413  | Payload Too Large | Used to signal that the request size exceeded the given limit (e.g. regarding file uploads and to ensure that the requests have reasonable sizes). |
+| 415  | Unsupported Media Type | The requested content type is not supported by the REST service. This is especially effective when you are working primary with JSON or XML media types. |
+| 429  | Too Many Requests | The error is used when there may be a DOS attack detected or the request is rejected due to rate limiting. | 
+| 500  | Internal Server Error | An unexpected condition prevented the server from fulfilling the request. Be aware that the response should not reveal internal information that helps an attacker, e.g. detailed error messages or stack traces. |
+| 501  | Not Implemented | The REST service does not implement the requested operation yet |
+| 502  | Service Unavailable | The REST service is temporarily unable to process the request. Used to inform the client it should retry at a later time. |
 
-```json
-{
-  "message": "Description of the error.",
-  "exception": "Description of the error"
-}
-```
-
-HTTP responses with error details should use a `4XX` status code to indicate a client-side failure (such as invalid authorization, or an invalid parameter), and a `5XX` status code to indicate server-side failure (such as an uncaught exception).
-
+Note: GSA APIs [should be using the api.data.gov service](#3-use-the-apidatagov-service) as a proxy between the client and the API. That service will return additional HTTP codes, prior to the request reaching the base API. Here is a list of those code: [https://api.data.gov/docs/errors/](https://api.data.gov/docs/errors/)
 
 ### Pagination
 
@@ -280,6 +291,21 @@ Access-Control-Allow-Origin: *
 It's supported by [every modern browser](http://enable-cors.org/client.html), and will Just Work in many JavaScript clients.
 
 For more advanced configuration, see the [W3C spec](http://www.w3.org/TR/cors/) or [Mozilla's guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+
+## API Testing
+
+At its most basic level, API testing is intended to reveal bugs: inconsistencies or deviations from the expected behavior. Continuous testing is also very important to make sure it continues to work when the public has access to it. The risk of putting a bad, and potentially insecure, product on the market is greater than the cost to test it.
+
+**Types of API Testing**
+- **Functionality testing** — the API works and does exactly what it’s supposed to do.
+- **Reliability testing** — the API can be consistently connected to and lead to consistent results.
+- **Load testing** — the API can handle a large amount of calls.
+- **Creativity testing** — the API can handle being used in different ways.
+- **Security testing** — the API has defined security requirements including authentication, permissions and access controls. 
+- **Proficiency testing** — the API increases what developers are able to do.
+- **API documentation testing** — also called discovery testing, the API documentation easily guides the user.
+- **Negative Testing** — checking for every kind of wrong input the user can possibly supply.
+
 
 ## SOAP Web Services
 * Provide a WSDL. 
