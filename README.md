@@ -158,8 +158,8 @@ An example would be:
 
 ## Other Considerations
 
-### Follow the GSA API Security Guide
-Security is critical to APIs. Review the GSA API Security Guide and implement the practices there.
+### API Security
+API Security is governed by the GSA IT Security Procedural Guide: API Security CIO-IT Security-19-93.
 
 ### Design for common use cases
 
