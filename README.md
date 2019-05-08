@@ -41,7 +41,7 @@ API Security is governed by the GSA IT Security Procedural Guide: API Security C
 
 ## Mandatory Items
 
-These are mandatory for existing and new APIs.
+These are mandatory for existing and new Public APIs. Implementation is occurring throughout 2019.
 
 ### 1. Add Your API To The GSA API Directory
 A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
@@ -132,7 +132,7 @@ The API documentation should provide a clear link to the [API's OpenAPI Specific
 
 Using Version 2.0 or later of the specification is recommended. Information about versions can be found here: [OpenAPI Specification Revision History](https://swagger.io/specification/#revisionHistory).
 
-## Mandatory For New APIs
+## Mandatory For New Public APIs
 
 In addition to the mandatory items above, new APIs must also implement these.
 
@@ -310,7 +310,7 @@ At its most basic level, API testing is intended to reveal bugs: inconsistencies
 
 * Provide documentation for SOAP web services.
 
-  Users of SOAP web services need documentation, just like REST users. GSA has developed an [API Documentation Template](https://github.com/GSA/api-documentation-template) which can easily be re-used for your SOAP web service.
+  Users of SOAP web services need documentation, just like REST users. 
 
 * See examples of versioning of SOAP web services above. 
 
