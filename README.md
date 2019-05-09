@@ -37,7 +37,7 @@ For the purposes of these standards, we use the following definitions:
   * **Public APIs** - Available to non-GSA applications and users. Examples include the general public, other agencies, or private companies.
 
 ## API Security
-API Security is governed by the GSA IT Security Procedural Guide: API Security CIO-IT Security-19-93.
+API Security is governed by the GSA IT Security Procedural Guide: API Security CIO-IT Security-19-93. API Security is governed by the GSA IT Security Procedural Guide: API Security CIO-IT Security-19-93. Reference that guide for security related topics such as HTTPS encryption, authentication, and authorization.
 
 ## Mandatory Items
 
