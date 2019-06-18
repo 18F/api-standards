@@ -23,4 +23,4 @@
 | Search.gov Type-ahead API | ? | https://(base domain)/{business_function}/{application_name}/{major version}/{plural_noun} |
 | [Sustainable Facilities Tool API](https://sftool.gov/developers) | https://api.data.gov/sftool/v1/ | https://api.gsa.gov/sustainability/sftool/v1/ |
 | [System for Award Management API](http://gsa.github.io/sam_api/sam/) | https://api.data.gov/sam/v1/ | https://api.gsa.gov/acquisitions/sam/v1/ |
-| [US Digital Registry API](https://usdigitalregistry.digitalgov.gov/) | https://api.gsa.gov/systems/digital-registry/ | https://api.gsa.gov/technology/digital-registry/ |
+| [US Digital Registry API](https://usdigitalregistry.digitalgov.gov/) | https://api.gsa.gov/systems/digital-registry/v1/ | https://api.gsa.gov/technology/digital-registry/v1/ |
