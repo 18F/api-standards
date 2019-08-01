@@ -8,7 +8,6 @@
 | [analytics.usa.gov](https://analytics.usa.gov/developer) | https://api.gsa.gov/analytics/dap/ | https://api.gsa.gov/analytics/dap/v1/ |
 | [api.data.gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/ | https://api.gsa.gov/analytics/api-data-gov/v1/ ? |
 | [api.data.gov Metrics API](http://api.data.gov/developer/) | ... | https://api.gsa.gov/analytics/api-data-gov/v1/ ? |
-https://api.data.gov/api-umbrella/v0/analytics/summary.json?api_key=biBHFQWowEsEGZAkH9DTUu6khOW1oPQHqGQAxzoO | 
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions |  https://api.gsa.gov/auctions/tbd/v1/ |
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/technology/datagov/v3/ ? |
 | Discovery API | https://discovery.gsa.gov/api/ |  https://api.gsa.gov/acquisition/discovery/v1/ | 
