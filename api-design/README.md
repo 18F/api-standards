@@ -9,10 +9,10 @@
 | [api.data.gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/v1/ | https://api.data.gov/operations/api-api-umbrella/v1/ |
 | [api.data.gov Metrics API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/v1/ | https://api.data.gov/operations/api-api-umbrella/v1/ |
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions |  https://api.gsa.gov/auctions/tbd/v1/ |
+| Calc | https://calc.gsa.gov/api/ |  https://api.gsa.gov/acquisition/calc/v1/ |
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/technology/datagov/v3/ ? |
 | Discovery API | https://discovery.gsa.gov/api/ |  https://api.gsa.gov/acquisition/discovery/v1/ | 
 | [eMuseum API](http://gsa.github.io/eMuseum-API/) | https://gsafinearts.pbs.gsa.gov/emuseum/api/ |  https://api.gsa.gov/real_estate/emuseum/v1/ |
-| [Federal Procurement Data System - FPDS API](https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc) |  |
 | [Go.USA.gov API](https://go.usa.gov/api) | http://go.usa.gov/api/ |  http://api.usa.gov/technology/go-usa-gov/ ? |
 | [Government Jobs API](http://search.digitalgov.gov/developer/jobs.html) |  https://api.usa.gov/jobs/ | Done |
 | GSA Fleet Vehicles API | http://api.data.gov/gsa/fleet/vehicles | https://api.gsa.gov/transportation/fleet/v1/ |
