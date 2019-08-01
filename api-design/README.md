@@ -15,13 +15,13 @@
 | [Federal Procurement Data System - FPDS API](https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc) |  |
 | [Go.USA.gov API](https://go.usa.gov/api) | http://go.usa.gov/api/ |  http://api.usa.gov/technology/go-usa-gov/ ? |
 | [Government Jobs API](http://search.digitalgov.gov/developer/jobs.html) |  https://api.usa.gov/jobs/ | Done |
-| GSA Fleet Vehicles API | ---- | https://api.gsa.gov/transportation/fleet/v1/ |
+| GSA Fleet Vehicles API | http://api.data.gov/gsa/fleet/vehicles | https://api.gsa.gov/transportation/fleet/v1/ |
 | GSA.GOV content API | https://www.gsa.gov/content-api |  https://api.gsa.gov/technology/gsa-content/v2/ |
 | [Per Diem API](http://gsa.gov/portal/content/162379) | https://inventory.data.gov/api/action/datastore_search | https://api.gsa.gov/travel/perdiem/v2/rates/|
 | Product Service Codes (PSC) API - beta.sam.gov | https://api.sam.gov/prod/locationservices/v1/api | ------ |
-| Search.gov i14y API | ? |  |
-| Search.gov Search Results API | ? |   |
-| Search.gov Type-ahead API | ? |  |
+| Search.gov i14y API |  |  |
+| Search.gov Search Results API |  |   |
+| Search.gov Type-ahead API |  |  |
 | [Sustainable Facilities Tool API](https://sftool.gov/developers) | https://api.data.gov/sftool/v1/ | https://api.gsa.gov/sustainability/sftool/v1/ |
 | [System for Award Management API](http://gsa.github.io/sam_api/sam/) | https://api.data.gov/sam/v1/ | https://api.gsa.gov/acquisitions/sam/v1/ |
 | [US Digital Registry API](https://usdigitalregistry.digitalgov.gov/) | https://api.gsa.gov/systems/digital-registry/v1/ | https://api.gsa.gov/technology/digital-registry/v1/ |
