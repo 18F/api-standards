@@ -6,8 +6,8 @@
 |---|---|---|
 | Acquisition Gateway API | https://hallways.cap.gsa.gov/api/v1.0 | https://api.gsa.gov/acquisition/cap/v1/ |
 | [analytics.usa.gov](https://analytics.usa.gov/developer) | https://api.gsa.gov/analytics/dap/ | https://api.gsa.gov/analytics/dap/v1/ |
-| [api.data.gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/v1/ | https://api.data.gov/operations/api-api-umbrella/v1/ |
-| [api.data.gov Metrics API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/v1/ | https://api.data.gov/operations/api-api-umbrella/v1/ |
+| [api.data.gov Admin API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/v1/ | https://api.gsa.gov/operations/api-api-umbrella/v1/ |
+| [api.data.gov Metrics API](http://api.data.gov/developer/) | https://api.data.gov/operations/api-api-umbrella/v1/ | https://api.gsa.gov/operations/api-api-umbrella/v1/ |
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions |  https://api.gsa.gov/auctions/tbd/v1/ |
 | Calc | https://calc.gsa.gov/api/ |  https://api.gsa.gov/acquisition/calc/v1/ |
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/technology/datagov/v3/ ? |
