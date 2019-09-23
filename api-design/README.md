@@ -13,7 +13,7 @@
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/technology/datagov/v3/ ? |
 | Discovery API | https://discovery.gsa.gov/api/ |  https://api.gsa.gov/acquisition/discovery/v1/ | 
 | [eMuseum API](http://gsa.github.io/eMuseum-API/) | https://gsafinearts.pbs.gsa.gov/emuseum/api/ |  https://api.gsa.gov/real_estate/emuseum/v1/ |
-| [Go.USA.gov API](https://go.usa.gov/api) | http://go.usa.gov/api/ |  http://api.usa.gov/technology/go-usa-gov/ ? |
+| [Go.USA.gov API](https://go.usa.gov/api) | http://go.usa.gov/api/ |  http://api.gsa.gov/technology/go-usa-gov/ ? |
 | [Government Jobs API](http://search.digitalgov.gov/developer/jobs.html) |  https://api.usa.gov/jobs/ | Done |
 | GSA Fleet Vehicles API | http://api.data.gov/gsa/fleet/vehicles | https://api.gsa.gov/transportation/fleet/v1/ |
 | GSA.GOV content API | https://www.gsa.gov/content-api |  https://api.gsa.gov/technology/gsa-content/v2/ |
