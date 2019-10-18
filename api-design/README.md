@@ -11,6 +11,7 @@
 | [Auctions API](http://gsa.github.io/auctions_api/) | https://api.data.gov/gsa/auctions |  https://api.gsa.gov/assets/gsaauctions/v2/auctions |
 | Calc | https://calc.gsa.gov/api/ |  https://api.gsa.gov/acquisition/calc/v1/ |
 | [Data.gov CKAN API](http://www.data.gov/developers/apis) | http://catalog.data.gov/api/3/ | http://api.gsa.gov/technology/datagov/v3/ ? |
+| Digital.gov Content API | https://digital.gov/ |  https://api.gsa.gov/technology/digitalgov/v1/ | 
 | Discovery API | https://discovery.gsa.gov/api/ |  https://api.gsa.gov/acquisition/discovery/v1/ | 
 | [eMuseum API](http://gsa.github.io/eMuseum-API/) | https://gsafinearts.pbs.gsa.gov/emuseum/api/ |  https://api.gsa.gov/real_estate/emuseum/v1/ |
 | [Go.USA.gov API](https://go.usa.gov/api) | http://go.usa.gov/api/ |  http://api.gsa.gov/technology/go-usa-gov/ ? |
