@@ -31,7 +31,7 @@ A few specific recommendations are provided for [SOAP web services](#soap-web-se
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They generally focus on the "externals" that will be exposed to users.
 
 ### For public and non-public APIs
-These standards will be useful for both public and non-public APIs. However, initially the mandatory items will be mandatory only for the public APIs.
+These standards will be useful for both public and non-public APIs. The mandatory items are mandatory only for the public APIs.
 
 For the purposes of these standards, we use the following definitions:
   * **Non Public APIs** - Available only to GSA applications and users.
