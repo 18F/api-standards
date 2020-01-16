@@ -49,7 +49,7 @@ These are mandatory for existing and new Public APIs.
 
 ### 2. Use The api.data.gov Service
 
-The [api.data.gov service](https://api.data.gov/about/) is an API management service for federal agencies. GSA APIs should use the `api.gsa.gov` base domain with this service.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  In some cases, other specific base domains can be established with this service for GSA APIs.
+(Public APIs) The [api.data.gov service](https://api.data.gov/about/) is an API management service for federal agencies. GSA APIs should use the `api.gsa.gov` base domain with this service.  By having the `api.gsa.gov` base URL as a proxy to developers, this also makes it easier to update and maintain the API in the future since you can update the underlying system and URLs without exposing it to the public.  In some cases, other specific base domains can be established with this service for GSA APIs.
 
 #### Implementing With Your API
 Initially, this service can be added as a new version of the URL, and then existing users can be transitioned to the new URL. For help setting this up, contact the api.data.gov team at <api.data.gov@gsa.gov>.
