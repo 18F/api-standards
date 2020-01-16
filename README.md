@@ -42,7 +42,7 @@ API Security is governed by the GSA IT Security Procedural Guide: API Security C
 
 ## Mandatory Items
 
-These are mandatory for existing and new Public APIs. Implementation is occurring throughout 2019.
+These are mandatory for existing and new Public APIs. 
 
 ### 1. Add Your API To The GSA API Directory
 (Public APIs) A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
