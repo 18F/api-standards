@@ -7,7 +7,6 @@ This document captures **GSA's recommended best practices, conventions, and stan
 [About These Standards](#about-these-standards)  
 [API Security](#api-security)  
 [Mandatory Items](#mandatory-items)  
-[Mandatory For New APIs](#mandatory-for-new-apis)  
 [Other Considerations](#other-considerations)  
 [SOAP Web Services](#soap-web-services)  
 [Future Topics](#future-topics)  
@@ -42,7 +41,7 @@ API Security is governed by the GSA IT Security Procedural Guide: API Security C
 
 ## Mandatory Items
 
-These are mandatory for existing and new Public APIs. 
+These are mandatory for GSA public APIs, with exceptions where noted.
 
 ### 1. Add Your API To The GSA API Directory
 (Public APIs) A directory of GSA public APIs is available at [open.gsa.gov/api](https://open.gsa.gov/api/). Add your API to this directory by posting an issue or pull request in the [GitHub repository](https://github.com/GSA/open-gsa-redesign). 
@@ -61,6 +60,8 @@ The api.gsa.gov service also provides:
 * gathering usage statistics (analytics)
 
 Keys managed by api.data.gov can be re-used with other APIs hosted by this service, which reduces complexity for users. This service also allows the use of a DEMO_KEY for unauthenticated access, without keys, which reduces the "Time To First Hello World" for developers using your API.
+
+_Exceptions: Not required for SOAP APIs. However, it may still provide value to your SOAP API._
 
 ### 3. Provide Support For Versioning
 All APIs must support versioning. The recommended method of versioning REST APIs is to include a major version number in the URL path. For example "/v1/". An example of this method can be found at: https://gsa.github.io/sam_api/sam/versioning.html.
@@ -129,16 +130,14 @@ When using GitHub for an API's code or documentation, use the associated issue t
 If you don't have a support channel specific to your API, you can use the issue tracker at [GSA-APIs](https://github.com/GSA/GSA-APIs/issues). Be sure your support team subscribes to issues there.
 
 ### 6. Provide An OpenAPI Specification File
-The API documentation should provide a clear link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification). This specification was formerly known as the Swagger specification. This specification file can be used by development or testing tools accessing your API. 
+For REST APIs, The API documentation should provide a clear link to the [API's OpenAPI Specification file](https://github.com/OAI/OpenAPI-Specification). This specification was formerly known as the Swagger specification. This specification file can be used by development or testing tools accessing your API. 
 
 Using Version 2.0 or later of the specification is recommended. Information about versions can be found here: [OpenAPI Specification Revision History](https://swagger.io/specification/#revisionHistory).
 
-## Mandatory For New Public APIs
-
-In addition to the mandatory items above, new APIs must also implement these.
+_Exceptions: Not required for SOAP APIs._
 
 ### 7. Follow The Standard API Endpoint Design
-An "endpoint" is a combination of two things:
+For REST APIs, An "endpoint" is a combination of two things:
 
 * The verb (e.g. `GET` , `POST`, `PUT`, `PATCH`, `DELETE`)
 * The URL path (e.g. `/articles`)
@@ -155,6 +154,7 @@ The URL path for an individual item in this collection would default to:
 An example would be:
 `https://api.gsa.gov/financial_management/sample_app/v1/vendors/123`
 
+_Exceptions: Not required for SOAP APIs. Not required for APIs that were in development or production prior to 2019._
 
 ## Other Considerations
 
