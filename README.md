@@ -154,7 +154,7 @@ The URL path for an individual item in this collection would default to:
 An example would be:
 `https://api.gsa.gov/financial_management/sample_app/v1/vendors/123`
 
-_Exceptions: Not required for SOAP APIs. Not required for APIs that were in development or production prior to 2019._
+_Exceptions: Not required for SOAP APIs. Not required for APIs that were in progress or production prior to December 2018._
 
 ## Other Considerations
 
