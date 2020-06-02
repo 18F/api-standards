@@ -5,7 +5,7 @@
 name: api-standards
 
 # Full proper name of the project (required)
-full_name: API Standards
+full_name: GSA API Standards
 
 # The type of content in the repo
 # values: app, docs, policy
@@ -13,14 +13,14 @@ type: policy
 
 # Describes whether a project team, working group/guild, etc. owns the repo (required)
 # values: guild, working-group, project
-owner_type: individual
+owner_type: working-group
 
 # Maturity stage of the project (required)
 # values: discovery, alpha, beta, live, sunset, transfer, end
-stage: live
+stage: discovery
 
 # Description of the project
-description: 18F's view of API best practices and standards
+description: GSA's recommended API best practices and standards
 
 # Tags that describe the project or aspects of the project
 tags: [standards, best-practices, apis, guides]
@@ -40,15 +40,9 @@ testable: false
 # have made valuable contributions to this project.
 #
 team:
-  - github: konklone
-    id: eric
+  - github: rdgsa
+    id: ryan
     role: lead
-  - github: adelevie
-    id: alan
-    role: lead
-  - github: arowla
-    id: alison
-    role: contributor
   - github: gbinal
     id: gray
     role: contributor
@@ -57,4 +51,4 @@ team:
 licenses:
   api-standards:
     name: CC0
-    url: https://github.com/18F/api-standards/blob/master/LICENSE.md
+    url: https://github.com/GSA/api-standards/blob/master/LICENSE.md
