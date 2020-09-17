@@ -186,7 +186,7 @@ The following items will be beneficial to the users of your APIs. (Full details 
 
 [Add Your API To The GSA API Directory](#1-add-your-api-to-the-gsa-api-directory)  
 [Use The api.data.gov Service](#2-use-the-apidatagov-service)  
-[Provide Support For Versioning](#3-provide-support-for-versioning)
+[Provide Support For Versioning](#3-provide-support-for-versioning)  
 [Provide An OpenAPI Specification File](#6-provide-an-openapi-specification-file)  
 [Follow the Standard API Endpoint Design](#7-follow-the-standard-api-endpoint-design)
 
