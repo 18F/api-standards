@@ -29,17 +29,17 @@ A few specific recommendations are provided for [SOAP web services](#soap-web-se
 ### They don't look under the covers
 Because APIs may be developed with multiple technologies, these standards avoid details internal to the development of the application or unique to a development platform. They generally focus on the "externals" that will be exposed to users.
 
-### For public and non-public APIs
-These standards will be useful for both public and non-public APIs. The mandatory items are mandatory only for the public APIs.
+### API Category Definitions
 
 For the purposes of these standards, we use the following definitions:
   * **Non Public APIs** - Available only to GSA applications and users.
   * **Public APIs** - Available to non-GSA applications and users. Examples include the general public, other agencies, or private companies.
+  * **Limited Limited Partner APIs** - Available to two or fewer non-GSA applications or users. Examples include other agencies or private companies.
 
 ## API Security
 API Security is governed by the GSA IT Security Procedural Guide: API Security CIO-IT Security-19-93. Reference that guide for security related topics such as HTTPS encryption, authentication, and authorization.
 
-## Mandatory Items
+## Mandatory Items for Public APIs ##
 
 These are mandatory for GSA public APIs, with exceptions where noted.
 
@@ -155,6 +155,38 @@ An example would be:
 `https://api.gsa.gov/financial_management/sample_app/v1/vendors/123`
 
 _Exceptions: Not required for SOAP APIs. Not required for APIs that were in progress or production prior to December 2018._
+
+## Mandatory Items for Limited Partner APIs ##
+
+
+
+### 1. Provide Public or Protected Documentation
+
+If details of API need to be secured from public viewing, the API documentation can be on a web page that is only accessible to authorized users of the API. This protected documentation may be mentioned on a separate public page, or directly linked from the API Directory.
+
+Your API documentation should provide:
+* An overview of the contents of the API and the data sources.
+* Required parameters and defaults.
+* A description of the data that is returned.
+* A description of the error codes that are returned, and their meaning.
+
+Additional nice-to-haves include:
+* Explanation of key management and a sample key.
+* Description of update frequency.
+* Interactive documentation to demonstrate sample calls.
+* Sample client code for consuming the API in common languages.
+
+### 2. Provide A Feedback Mechanism That Is Clear and Monitored
+
+On the public or protected documentation page, include a method for users to report issues and ask questions about the API. It is critical to respond to issues posted or queries submitted by developers. This demonstrates that the API can be counted on for production usage. If an immediate fix (or even a developer to investigate) is not readily available, respond anyway. Developers will be glad to know when you'll be able to take a look.
+
+## Recomended Items for Limited Partner APIs ##
+
+The following items will be beneficial to the users of your APIs. (Full details of these items are linked to the previous section of this document.)
+
+[Add Your API To The GSA API Directory](#add-your-api-to-the-gsa-api-directory)  
+
+
 
 ## Other Considerations
 
